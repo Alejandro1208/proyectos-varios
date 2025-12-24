@@ -1,0 +1,1076 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Básico -->
+    <title>MAC - Puertas Blindadas y Seguridad Integral | Fábrica Directa</title>
+    <meta name="description" content="MAC Puertas Blindadas: Líderes en fabricación de puertas búnker y sistemas de seguridad. Blindajes a medida, servicio técnico y cerrajería experta en Buenos Aires. Presupuesto sin cargo.">
+    <meta name="keywords" content="puertas blindadas, puerta bunker, seguridad hogar, blindaje de puertas, cerrajeria de seguridad, puertas antirrobo, MAC puertas, CABA, Buenos Aires, servicio tecnico puertas">
+    <meta name="author" content="MAC Puertas Blindadas">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook / WhatsApp -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.macpuertasblindadas.com/">
+    <meta property="og:title" content="MAC - Puertas Blindadas y Seguridad Integral">
+    <meta property="og:description" content="Protege tu hogar con la máxima seguridad. Fabricación de puertas búnker, blindajes y mantenimiento especializado.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1557063673-0493e0ce9a46?auto=format&fit=crop&q=80&w=1200">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="MAC - Puertas Blindadas">
+    <meta property="twitter:description" content="Líderes en seguridad domiciliaria. Puertas Búnker y Blindajes.">
+    <meta property="twitter:image" content="https://images.unsplash.com/photo-1557063673-0493e0ce9a46?auto=format&fit=crop&q=80&w=1200">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        mac: {
+                            dark: '#035AA6',   /* Azul Oscuro Logo */
+                            medium: '#0367A6', /* Azul Medio */
+                            light: '#049DBF',  /* Celeste Logo */
+                            bg: '#F2F2F2',     /* Fondo Claro Logo */
+                            text: '#1e293b'    /* Texto oscuro legible */
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Iconos Lucide -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Fuentes y Estilos Personalizados -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+        body { font-family: 'Inter', sans-serif; }
+
+        /* Animaciones de Scroll */
+        .reveal {
+            opacity: 0;
+            transform: translateY(2rem);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Animación Slider Texto */
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-slideUp { animation: slideUp 0.6s ease-out forwards; }
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+
+        /* Slider Infinito Clientes */
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        
+        .animate-scroll {
+            animation: scroll 25s linear infinite;
+        }
+
+        /* Utilidad para ocultar/mostrar vistas */
+        .hidden-view { display: none; }
+        .fade-in { animation: fadeIn 0.4s ease-in; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        /* Estilos para el slider de detalles (pequeño) */
+        .detail-slide {
+            position: absolute;
+            inset: 0;
+            transition: opacity 0.5s ease-in-out;
+            opacity: 0;
+        }
+        .detail-slide.active {
+            opacity: 1;
+        }
+
+        /* Estilo modal imagen */
+        #image-modal {
+            backdrop-filter: blur(8px);
+        }
+
+        /* Ocultar barra de scroll pero permitir scroll */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+        
+        /* Spinner de carga */
+        .loader {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #035AA6;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="text-mac-text bg-mac-bg selection:bg-mac-light selection:text-white">
+
+    <!-- NAVBAR -->
+    <nav class="fixed w-full z-50 bg-white shadow-sm border-b border-gray-100 h-24 flex items-center transition-all duration-300">
+        <div class="container mx-auto px-6 flex justify-between items-center h-full relative">
+            <!-- Logo -->
+            <div onclick="showHome()" class="cursor-pointer flex items-center gap-2 z-50">
+                <img src="images/logo/logo-color.png" alt="Logo MAC Puertas Blindadas - Inicio" class="h-12 md:h-14 w-auto object-contain">
+            </div>
+
+            <!-- Desktop Menu -->
+            <div class="hidden xl:flex gap-6 items-center absolute left-1/2 transform -translate-x-1/2 w-full justify-center">
+                <button onclick="scrollToSection('hero')" class="relative group text-gray-600 font-medium hover:text-mac-dark transition-colors duration-300 text-sm">
+                    Inicio <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-mac-light transition-all duration-300 group-hover:w-full"></span>
+                </button>
+                <button onclick="scrollToSection('nosotros')" class="relative group text-gray-600 font-medium hover:text-mac-dark transition-colors duration-300 text-sm">
+                    Nosotros <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-mac-light transition-all duration-300 group-hover:w-full"></span>
+                </button>
+                <button onclick="scrollToSection('servicios')" class="relative group text-gray-600 font-medium hover:text-mac-dark transition-colors duration-300 text-sm">
+                    Servicios <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-mac-light transition-all duration-300 group-hover:w-full"></span>
+                </button>
+                <!-- Nuevos items de menú -->
+                <button onclick="scrollToSection('cerraduras')" class="relative group text-gray-600 font-medium hover:text-mac-dark transition-colors duration-300 text-sm">
+                    Cerraduras <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-mac-light transition-all duration-300 group-hover:w-full"></span>
+                </button>
+                <button onclick="scrollToSection('trabajos')" class="relative group text-gray-600 font-medium hover:text-mac-dark transition-colors duration-300 text-sm">
+                    Trabajos <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-mac-light transition-all duration-300 group-hover:w-full"></span>
+                </button>
+                <button onclick="scrollToSection('contacto')" class="relative group text-gray-600 font-medium hover:text-mac-dark transition-colors duration-300 text-sm">
+                    Contacto <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-mac-light transition-all duration-300 group-hover:w-full"></span>
+                </button>
+            </div>
+
+            <!-- Desktop Icons -->
+            <div class="hidden xl:flex items-center gap-5">
+                <div class="flex items-center gap-2 text-gray-600 group cursor-pointer hover:text-mac-dark transition-colors">
+                    <div class="p-2 bg-blue-50 group-hover:bg-blue-100 rounded-full transition-colors text-mac-dark">
+                        <i data-lucide="phone" class="w-4 h-4"></i>
+                    </div>
+                    <span class="text-sm font-semibold">+54 9 11 2251‑7132</span>
+                </div>
+                <div class="w-px h-6 bg-gray-200"></div>
+                <a href="#contacto" aria-label="Enviar Email a MAC" class="text-gray-500 hover:text-mac-dark p-2 hover:bg-blue-50 rounded-full transition-all relative group">
+                    <i data-lucide="mail" class="w-5 h-5"></i>
+                </a>
+            </div>
+
+            <!-- Mobile Hamburger -->
+            <button onclick="toggleMenu()" aria-label="Abrir menú" class="xl:hidden text-mac-dark focus:outline-none relative z-50 p-2 hover:bg-gray-100 rounded-lg transition-colors">
+                <i id="menu-icon" data-lucide="menu" class="w-7 h-7 transition-transform"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="fixed inset-0 z-40 flex flex-col pt-24 px-8 transition-transform duration-300 translate-x-full h-screen w-screen bg-white/98 backdrop-blur-xl">
+            <div class="flex flex-col gap-4 text-center">
+                <button onclick="scrollToSection('hero')" class="text-xl font-bold text-gray-800 py-2 hover:bg-gray-50 rounded-xl transition-colors">Inicio</button>
+                <button onclick="scrollToSection('nosotros')" class="text-xl font-bold text-gray-800 py-2 hover:bg-gray-50 rounded-xl transition-colors">Nosotros</button>
+                <button onclick="scrollToSection('servicios')" class="text-xl font-bold text-gray-800 py-2 hover:bg-gray-50 rounded-xl transition-colors">Servicios</button>
+                <button onclick="scrollToSection('cerraduras')" class="text-xl font-bold text-gray-800 py-2 hover:bg-gray-50 rounded-xl transition-colors">Cerraduras</button>
+                <button onclick="scrollToSection('trabajos')" class="text-xl font-bold text-gray-800 py-2 hover:bg-gray-50 rounded-xl transition-colors">Trabajos</button>
+                <button onclick="scrollToSection('contacto')" class="text-xl font-bold text-gray-800 py-2 hover:bg-gray-50 rounded-xl transition-colors">Contacto</button>
+            </div>
+            <div class="mt-auto mb-10 border-t border-gray-100 pt-8 flex justify-center gap-10">
+                <a href="tel:+5491122517132" class="flex flex-col items-center gap-2 text-gray-500 hover:text-mac-dark transition-colors group">
+                    <div class="p-4 bg-blue-50 group-hover:bg-blue-100 rounded-full text-mac-dark transition-colors"><i data-lucide="phone" class="w-6 h-6"></i></div>
+                    <span class="text-base font-medium">Llamar</span>
+                </a>
+                <a href="mailto:mauro.play15@gmail.com" class="flex flex-col items-center gap-2 text-gray-500 hover:text-mac-dark transition-colors group">
+                    <div class="p-4 bg-blue-50 group-hover:bg-blue-100 rounded-full text-mac-dark transition-colors"><i data-lucide="mail" class="w-6 h-6"></i></div>
+                    <span class="text-base font-medium">Email</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- VISTA PRINCIPAL (HOME) -->
+    <main id="home-view">
+        <!-- Hero Slider -->
+        <section id="hero" class="relative h-[85vh] w-full overflow-hidden pt-20 bg-mac-dark">
+            <div id="hero-slides-container" class="absolute inset-0"></div>
+            
+            <div id="hero-indicators" class="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex gap-3 z-20"></div>
+            
+            <!-- Overlay Azulado -->
+            <div class="absolute inset-0 bg-gradient-to-b from-mac-dark/40 via-mac-dark/20 to-mac-dark/70 z-10 pointer-events-none mix-blend-multiply"></div>
+        </section>
+
+        <!-- Sobre Nosotros -->
+        <section id="nosotros" class="py-24 bg-white overflow-hidden relative">
+            <div class="container mx-auto px-6 relative z-10">
+                <div class="flex flex-col lg:flex-row items-center gap-16">
+                    <div class="w-full lg:w-1/2 reveal">
+                        <div class="relative group">
+                            <div class="absolute -inset-4 bg-mac-light/20 rounded-2xl transform -rotate-3 z-0 transition-transform group-hover:-rotate-6"></div>
+                            <img src="images/nosotros.jpg" alt="Fábrica y taller de puertas blindadas MAC Security en Buenos Aires" class="relative rounded-lg shadow-xl z-10 w-full object-cover h-[400px]">
+                        </div>
+                    </div>
+                    <div class="w-full lg:w-1/2 reveal">
+                        <h2 class="text-sm font-bold text-mac-light uppercase tracking-widest mb-3 flex items-center gap-2">
+                            <span class="w-6 h-0.5 bg-mac-light inline-block"></span> Nuestra Trayectoria
+                        </h2>
+                        <h3 class="text-3xl md:text-4xl font-bold text-mac-dark mb-6 leading-tight">Ingeniería en Seguridad,<br>Excelencia en Fabricación.</h3>
+                        <p class="text-gray-600 leading-relaxed text-lg mb-6">
+                            En MAC Puertas Blindadas, no solo vendemos puertas; <strong class="text-mac-dark font-bold">diseñamos y fabricamos sistemas de protección</strong>. Con décadas de experiencia, nos especializamos en crear barreras infranqueables que combinan la más alta tecnología en blindaje con terminaciones estéticas de primer nivel.
+                        </p>
+                        <p class="text-gray-600 leading-relaxed text-lg mb-8">
+                            Nuestro compromiso va más allá de la instalación. Ofrecemos un servicio integral que incluye asesoramiento personalizado, fabricación a medida y un soporte técnico post-venta inigualable.
+                        </p>
+                         <button onclick="scrollToSection('contacto')" class="inline-flex items-center gap-2 bg-mac-dark text-white px-8 py-3 rounded-lg font-semibold hover:bg-mac-medium transition-all transform hover:-translate-y-1 shadow-md text-base">
+                            Solicitar Asesoramiento <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Servicios -->
+        <section id="servicios" class="py-24 bg-mac-bg relative">
+            <div class="container mx-auto px-6 relative z-10">
+                <div class="text-center mb-16 reveal">
+                    <h2 class="text-sm font-bold text-mac-light uppercase tracking-widest mb-3">Soluciones de Alta Seguridad</h2>
+                    <h3 class="text-3xl md:text-4xl font-bold text-mac-dark mb-4">Nuestros Servicios Especializados</h3>
+                    <p class="text-lg text-gray-500 max-w-2xl mx-auto">Protección robusta y servicios técnicos profesionales adaptados a cada necesidad.</p>
+                </div>
+                <!-- Grid de servicios inyectado por JS -->
+                <div id="services-grid" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8"></div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN CERRADURAS (NUEVA) -->
+        <section id="cerraduras" class="py-24 bg-white relative border-b border-gray-100">
+            <div class="container mx-auto px-6 relative z-10">
+                <div class="text-center mb-16 reveal">
+                    <h2 class="text-sm font-bold text-mac-light uppercase tracking-widest mb-3">Sistemas de Cierre</h2>
+                    <h3 class="text-3xl md:text-4xl font-bold text-mac-dark mb-4">Nuestras Cerraduras</h3>
+                    <p class="text-lg text-gray-500 max-w-2xl mx-auto">Tecnología de vanguardia para garantizar la inviolabilidad de su acceso.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    
+                    <!-- Slider Cerradura Base -->
+                    <div class="reveal">
+                        <h4 class="text-xl font-bold text-mac-dark mb-6 flex items-center gap-2 border-b border-gray-100 pb-2">
+                            <i data-lucide="lock" class="text-mac-light"></i> Sistema Base Semi Pesada
+                        </h4>
+                        <div class="relative w-full">
+                            <div id="locks-base-container" class="draggable-slider flex gap-4 overflow-x-auto cursor-grab active:cursor-grabbing no-scrollbar px-1 pb-4 snap-x">
+                                <!-- Images injected by JS -->
+                            </div>
+                            <div class="absolute top-0 bottom-4 right-0 w-12 bg-gradient-to-l from-white to-transparent pointer-events-none"></div>
+                        </div>
+                        <p class="text-sm text-gray-400 mt-2 text-center"><i data-lucide="hand" class="inline w-3 h-3 mr-1"></i> Desliza para ver</p>
+                    </div>
+
+                    <!-- Slider Cerradura Búnker -->
+                    <div class="reveal">
+                        <h4 class="text-xl font-bold text-mac-dark mb-6 flex items-center gap-2 border-b border-gray-100 pb-2">
+                            <i data-lucide="shield-check" class="text-mac-light"></i> Sistema Búnker (Alta Seguridad)
+                        </h4>
+                        <div class="relative w-full">
+                            <div id="locks-bunker-container" class="draggable-slider flex gap-4 overflow-x-auto cursor-grab active:cursor-grabbing no-scrollbar px-1 pb-4 snap-x">
+                                <!-- Images injected by JS -->
+                            </div>
+                            <div class="absolute top-0 bottom-4 right-0 w-12 bg-gradient-to-l from-white to-transparent pointer-events-none"></div>
+                        </div>
+                        <p class="text-sm text-gray-400 mt-2 text-center"><i data-lucide="hand" class="inline w-3 h-3 mr-1"></i> Desliza para ver</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Slider Clientes / Trabajos Realizados (DRAGGABLE) -->
+        <section id="trabajos" class="py-20 bg-mac-bg border-t border-gray-100">
+            <div class="container mx-auto px-6 mb-10 text-center">
+                 <h2 class="text-sm font-bold text-mac-light uppercase tracking-widest mb-2">Galería de Proyectos</h2>
+                <h3 class="text-3xl font-bold text-gray-800">Trabajos Realizados</h3>
+                <p class="text-sm text-gray-400 mt-2"><i data-lucide="hand" class="inline w-4 h-4 mr-1"></i> Desliza para ver más</p>
+            </div>
+            
+            <div class="relative w-full">
+                <!-- Contenedor Draggable -->
+                <div id="clients-scroll-container" class="draggable-slider flex gap-6 overflow-x-auto cursor-grab active:cursor-grabbing no-scrollbar px-6 pb-8 snap-x">
+                    <!-- Images injected by JS -->
+                </div>
+                
+                <!-- Sombras indicadoras de scroll -->
+                <div class="absolute top-0 bottom-8 left-0 w-16 bg-gradient-to-r from-mac-bg to-transparent pointer-events-none"></div>
+                <div class="absolute top-0 bottom-8 right-0 w-16 bg-gradient-to-l from-mac-bg to-transparent pointer-events-none"></div>
+            </div>
+        </section>
+
+        <!-- Contacto -->
+        <section id="contacto" class="py-24 bg-white relative overflow-hidden">
+            <div class="absolute inset-0 bg-mac-dark/5"></div> <!-- Fondo muy sutil azul -->
+            
+            <div class="container mx-auto px-6 relative z-10">
+                 <div class="text-center mb-16 reveal">
+                    <h2 class="text-sm font-bold text-mac-light uppercase tracking-widest mb-3">Hablemos de Seguridad</h2>
+                    <h3 class="text-3xl md:text-4xl font-bold text-mac-dark mb-4">Contáctanos Hoy Mismo</h3>
+                    <p class="text-lg text-gray-600 max-w-2xl mx-auto">Estamos listos para blindar tu tranquilidad. Solicita tu presupuesto sin cargo.</p>
+                </div>
+
+                <div class="flex justify-center">
+                    <div class="w-full max-w-2xl p-8 lg:p-12 reveal bg-white rounded-2xl shadow-xl border border-gray-100">
+                        <h4 class="text-2xl font-bold text-center mb-8 text-mac-dark">Formulario de Consulta</h4>
+                        <!-- Formulario apuntando al archivo PHP -->
+                        <form id="contact-form" onsubmit="handleForm(event)" class="space-y-6">
+                            <div class="relative">
+                                <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Nombre Completo</label>
+                                <input type="text" id="name" name="nombre" required class="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-mac-light focus:ring-1 focus:ring-mac-light outline-none transition-colors" placeholder="Juan Pérez">
+                            </div>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div class="relative">
+                                    <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Teléfono</label>
+                                    <input type="tel" id="phone" name="telefono" required class="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-mac-light focus:ring-1 focus:ring-mac-light outline-none transition-colors" placeholder="+54 11...">
+                                </div>
+                                <div class="relative">
+                                    <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                                    <input type="email" id="email" name="email" required class="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-mac-light focus:ring-1 focus:ring-mac-light outline-none transition-colors" placeholder="juan@email.com">
+                                </div>
+                            </div>
+                            <div class="relative">
+                                <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Mensaje</label>
+                                <textarea rows="4" id="message" name="mensaje" required class="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-mac-light focus:ring-1 focus:ring-mac-light outline-none transition-colors resize-none" placeholder="Estoy interesado en..."></textarea>
+                            </div>
+                            <button id="form-btn" type="submit" class="w-full py-4 rounded-lg font-bold text-white bg-mac-dark hover:bg-mac-medium transition-all transform hover:-translate-y-0.5 shadow-lg flex justify-center items-center gap-2 text-base">
+                                Enviar Consulta <i data-lucide="send" class="w-4 h-4"></i>
+                            </button>
+                            <div id="form-status" class="hidden text-center p-3 rounded-lg text-sm font-medium"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- VISTA DETALLE SERVICIO (Oculta por defecto) -->
+    <div id="service-view" class="hidden-view fade-in min-h-screen bg-white pt-20">
+        <div id="service-loader" class="hidden absolute inset-0 bg-white z-50 flex items-center justify-center">
+            <div class="loader"></div>
+        </div>
+        <div id="service-content"></div>
+    </div>
+
+    <!-- MODAL DE IMAGEN (LIGHTBOX) -->
+    <div id="image-modal" class="fixed inset-0 z-[60] bg-black/90 hidden flex items-center justify-center p-4 transition-opacity duration-300 opacity-0" onclick="closeImageModal()">
+        <button onclick="closeImageModal()" class="absolute top-6 right-6 text-white hover:text-gray-300 transition-colors bg-white/10 rounded-full p-2 backdrop-blur-sm z-50">
+            <i data-lucide="x" class="w-8 h-8"></i>
+        </button>
+        <img id="modal-image" src="" class="max-w-full max-h-[90vh] rounded-lg shadow-2xl transform scale-95 transition-transform duration-300" alt="Vista completa del proyecto" onclick="event.stopPropagation()">
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-mac-dark text-white pt-16 pb-8">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row justify-between items-start mb-12 gap-10">
+                <div class="flex flex-col gap-4 max-w-sm">
+                    <img src="images/logo/logo-blanco.png" alt="Logo MAC Puertas Blindadas" class="h-16 w-auto object-contain mb-2">
+                    <p class="text-blue-100 text-sm leading-relaxed">
+                        Líderes en la fabricación e instalación de puertas de seguridad de alta gama. Protegemos lo que más te importa con tecnología de vanguardia.
+                    </p>
+                </div>
+                 <div class="flex flex-col md:flex-row gap-12 lg:gap-20 text-sm">
+                    <div class="flex flex-col gap-3">
+                        <h4 class="text-white font-bold text-base mb-1 border-b border-mac-light/30 pb-2 inline-block">Navegación</h4>
+                        <button onclick="scrollToSection('hero')" class="text-left text-blue-100 hover:text-white transition-colors">Inicio</button>
+                        <button onclick="scrollToSection('nosotros')" class="text-left text-blue-100 hover:text-white transition-colors">Nosotros</button>
+                        <button onclick="scrollToSection('servicios')" class="text-left text-blue-100 hover:text-white transition-colors">Servicios</button>
+                        <button onclick="scrollToSection('cerraduras')" class="text-left text-blue-100 hover:text-white transition-colors">Cerraduras</button>
+                        <button onclick="scrollToSection('trabajos')" class="text-left text-blue-100 hover:text-white transition-colors">Trabajos</button>
+                        <button onclick="scrollToSection('contacto')" class="text-left text-blue-100 hover:text-white transition-colors">Contacto</button>
+                    </div>
+                    <div class="flex flex-col gap-3">
+                        <h4 class="text-white font-bold text-base mb-1 border-b border-mac-light/30 pb-2 inline-block">Contacto</h4>
+                        <p class="flex items-center gap-2 text-blue-100"><i data-lucide="phone" class="w-4 h-4 text-mac-light"></i> +54 9 11 2251‑7132</p>
+                        <p class="flex items-center gap-2 text-blue-100"><i data-lucide="mail" class="w-4 h-4 text-mac-light"></i> mauro.play15@gmail.com</p>
+                    </div>
+                 </div>
+                
+                <div class="flex gap-3">
+                    <a href="#" aria-label="Facebook" class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-mac-light transition-all"><i data-lucide="facebook" class="w-5 h-5"></i></a>
+                    <a href="https://www.instagram.com/puertasblindadasmac" target="_blank" aria-label="Instagram" class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-mac-light transition-all"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+                    <a href="#" aria-label="LinkedIn" class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-mac-light transition-all"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
+                </div>
+            </div>
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-blue-200/80 text-xs gap-4">
+                <p>© 2025 MAC Puertas Blindadas. Todos los derechos reservados.</p>
+                <div class="flex gap-6">
+                     <p class="flex items-center gap-2"><i data-lucide="clock" class="w-3 h-3"></i> Lun a Vie: 9:00 - 18:00 hs</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Whatsapp Floating -->
+    <a href="https://wa.me/5491122517132" target="_blank" aria-label="Contactar por WhatsApp" class="fixed bottom-8 right-8 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-xl hover:bg-[#20ba5a] transition-all hover:scale-105 flex items-center justify-center group">
+        <i data-lucide="message-circle" class="w-8 h-8"></i>
+        <span class="absolute right-full mr-3 bg-white text-gray-800 px-3 py-1.5 rounded-lg font-bold shadow-md opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap text-sm">Chat</span>
+    </a>
+
+    <!-- LÓGICA JAVASCRIPT -->
+    <script>
+        // Función auxiliar para generar rutas de imágenes (intenta cargar hasta 20)
+        function generatePaths(folder, prefix, count) {
+            return Array.from({length: count}, (_, i) => `images/${folder}/${prefix}${i+1}.jpg`);
+        }
+
+        // Función para verificar si una imagen existe
+        async function filterValidImages(images) {
+            const checks = images.map(src => {
+                return new Promise((resolve) => {
+                    const img = new Image();
+                    img.onload = () => resolve(src);
+                    img.onerror = () => resolve(null);
+                    img.src = src;
+                });
+            });
+            const results = await Promise.all(checks);
+            return results.filter(src => src !== null);
+        }
+
+        // --- DATA ACTUALIZADA ---
+        const servicesData = [
+            {
+                id: 1,
+                title: "Construcción Puerta Búnker",
+                subtitle: "Grado Máximo de Seguridad",
+                description: "Puerta de seguridad de máxima categoría. Construcción integral en chapa de 2.4mm de espesor, sistema de cierre perimetral multi-anclaje de 4 lados y relleno ignífugo/acústico.",
+                image: "images/puertas-bunker/puertas-bunker1.jpg",
+                // Intenta cargar 20 imágenes
+                gallery: generatePaths('puertas-bunker', 'puertas-bunker', 20),
+                locks: {
+                    title: "Sistema de Cerradura Búnker",
+                    images: generatePaths('cerraduras/bunker', 'bunker', 10)
+                },
+                details: {
+                    intro: "La Puerta Búnker representa la cúspide de la seguridad residencial y comercial. Diseñada para resistir los ataques más violentos, es una fortaleza impenetrable construida con los más altos estándares de ingeniería.",
+                    points: [
+                        "**Estructura Robusta:** Construida en su totalidad en chapa de 2.4mm de espesor.",
+                        "**Peso y Solidez:** Peso aproximado de 90 a 100 kg, dependiendo del ancho.",
+                        "**Cierre Perimetral Total:** Cerradura central multi-anclaje que activa en los 4 lados periféricos de la puerta.",
+                        "**Cerrojos de Alta Seguridad:** 2 cerrojos interactivos (superior e inferior) + 2 pernos fijos en el lado de las bisagras.",
+                        "**Refuerzo Estructural:** Interior con 4 costillas Omega soldadas a la estructura principal.",
+                        "**Aislamiento Superior:** Relleno de material ignífugo y acústico de alta densidad (5 a 10 kg adicionales).",
+                        "**Terminaciones Premium:** Opciones de decoración pintada o enchapada, con herrajes plateados o dorados de alta calidad."
+                    ]
+                }
+            },
+            {
+                id: 2,
+                title: "Puerta Base Semi Pesada",
+                subtitle: "Seguridad Avanzada",
+                description: "Excelente equilibrio entre seguridad y costo. Construida en chapa de 1.6mm, con cierre multi-anclaje de 4 lados, cerrojo inferior interactivo y estructura reforzada.",
+                image: "images/semi-pesadas/semi-pesadas1.jpg",
+                gallery: generatePaths('semi-pesadas', 'semi-pesadas', 20),
+                locks: {
+                    title: "Sistema de Cerradura Semi Pesada",
+                    images: generatePaths('cerraduras/base', 'base', 10)
+                },
+                details: {
+                    intro: "Nuestra Puerta Base Semi Pesada ofrece un nivel de protección superior para hogares y oficinas que requieren una seguridad confiable sin llegar a los extremos de un búnker. Combina una estructura sólida con mecanismos de cierre avanzados.",
+                    points: [
+                        "**Construcción Sólida:** Fabricada integralmente en chapa de 1.6mm de espesor.",
+                        "**Peso y Resistencia:** Peso aproximado de 90 a 100 kg.",
+                        "**Cierre Multi-Anclaje:** Sistema de cerradura central que activa puntos de cierre en los 4 lados de la puerta.",
+                        "**Seguridad Adicional:** 1 cerrojo interactivo inferior + 2 pernos fijos en el lado de las bisagras.",
+                        "**Estructura Reforzada:** Cuenta con 4 costillas Omega soldadas en su interior.",
+                        "**Aislamiento Termoacústico e Ignífugo:** Relleno de material especializado para confort y seguridad contra incendios.",
+                        "**Estética Personalizable:** Terminación pintada o enchapada, herrajes a elección (plateados/dorados)."
+                    ]
+                }
+            },
+            {
+                id: 3,
+                title: "Mantenimiento Integral",
+                subtitle: "Servicio Técnico",
+                description: "Servicio completo para asegurar el funcionamiento óptimo de sus puertas: cambios de cilindro y decoración, ajustes, calibraciones y reparación de bisagras.",
+                image: "images/mantenimiento/mantenimiento1.jpg",
+                gallery: generatePaths('mantenimiento', 'mantenimiento', 20),
+                details: {
+                    intro: "El mantenimiento preventivo y correctivo es crucial para garantizar que su puerta de seguridad funcione correctamente cuando más la necesita. Nuestro equipo de técnicos especializados ofrece una gama completa de servicios para prolongar la vida útil de su inversión.",
+                    points: [
+                        "**Cambios de Cilindro:** Sustitución de cilindros por pérdida de llaves o actualización de seguridad.",
+                        "**Renovación Estética:** Cambios completos de paneles de decoración para modernizar el aspecto de su puerta.",
+                        "**Ajustes y Calibraciones:** Nivelación de la puerta, ajuste de cierre y lubricación de mecanismos internos.",
+                        "**Reparación de Bisagras:** Solución a problemas de bisagras vencidas o dañadas, incluyendo soldadura especializada.",
+                        "**Traslados y Adaptaciones:** Desmontaje, traslado y reinstalación de puertas de seguridad, con adaptación y desarrollo de nuevos marcos si es necesario."
+                    ]
+                }
+            },
+            {
+                id: 4,
+                title: "Blindajes de Puerta existente",
+                subtitle: "Modernización",
+                description: "Transformamos sus puertas actuales en barreras de seguridad. Realizamos blindajes sobre puertas existentes y adaptamos cerraduras digitales de última generación.",
+                image: "images/blindajes-reformas/blindajes-reformas1.jpg",
+                gallery: generatePaths('blindajes-reformas', 'blindajes-reformas', 20),
+                details: {
+                    intro: "No siempre es necesario cambiar la puerta completa para mejorar la seguridad. Ofrecemos soluciones de blindaje y modernización que refuerzan sus accesos existentes, incorporando la última tecnología en control de acceso.",
+                    points: [
+                        "**Blindaje de Puertas Existentes:** Refuerzo estructural de puertas de madera o metal con placas de acero y sistemas de cierre multipunto.",
+                        "**Integración de Cerraduras Digitales:** Instalación y adaptación de cerraduras electrónicas, biométricas (huella dactilar), con código PIN o apertura remota vía app.",
+                        "**Reformas Personalizadas:** Adaptación de marcos y hojas para acomodar nuevos sistemas de seguridad o cambios estéticos.",
+                        "**Asesoramiento Técnico:** Evaluación del estado de la puerta actual para determinar la viabilidad y el mejor método de refuerzo."
+                    ]
+                }
+            }
+        ];
+
+        // Hero Images Restauradas a Unsplash
+        const heroSlides = [
+            { image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1600", title: "Seguridad Impenetrable, Diseño Impecable.", subtitle: "Fabricantes líderes de Puertas Búnker y sistemas de blindaje." },
+            { image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1600", title: "Ingeniería de Precisión para tu Tranquilidad.", subtitle: "Puertas semi-pesadas con cierre multi-anclaje de 4 lados." },
+            { image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=1600", title: "Servicio Técnico Especializado.", subtitle: "Expertos en ajustes, reparaciones y cerraduras digitales." }
+        ];
+
+        const clientImages = [
+            "images/trabajos/trabajo1.jpg",
+            "images/trabajos/trabajo2.jpg",
+            "images/trabajos/trabajo3.jpg",
+            "images/trabajos/trabajo4.jpg",
+            "images/trabajos/trabajo5.jpg"
+        ];
+        
+        // Cerraduras Data
+        const lockImagesBase = generatePaths('cerraduras/base', 'base', 10);
+        const lockImagesBunker = generatePaths('cerraduras/bunker', 'bunker', 10);
+
+        // --- RENDER LOGIC ---
+
+        const servicesGrid = document.getElementById('services-grid');
+        servicesData.forEach((s, idx) => {
+            const delay = idx * 100;
+            const html = `
+                <div class="reveal bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 h-full flex flex-col group border border-gray-100" style="transition-delay: ${delay}ms">
+                    <div class="h-56 overflow-hidden relative">
+                        <div class="absolute inset-0 bg-mac-dark/20 group-hover:bg-mac-dark/0 transition-all duration-500 z-10"></div>
+                        <img src="${s.image}" alt="Servicio de ${s.title}" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold text-mac-dark mb-2 group-hover:text-mac-light transition-colors">${s.title}</h3>
+                        <p class="text-xs text-mac-medium font-bold mb-3 uppercase tracking-wider flex items-center gap-1">
+                            <i data-lucide="shield" class="w-3 h-3"></i> ${s.subtitle}
+                        </p>
+                        <p class="text-gray-600 mb-6 text-sm line-clamp-3 flex-grow leading-relaxed">${s.description}</p>
+                        <button onclick="openServiceDetail(${s.id})" class="w-full py-3 bg-white text-mac-dark border border-mac-dark/20 rounded-lg font-semibold hover:bg-mac-dark hover:text-white transition-all shadow-sm flex justify-center items-center gap-2 group/btn">
+                            Ver Detalles <i data-lucide="chevron-right" class="w-4 h-4 group-hover/btn:translate-x-1 transition-transform"></i>
+                        </button>
+                    </div>
+                </div>
+            `;
+            servicesGrid.innerHTML += html;
+        });
+
+        // Initialize Locks Slider Content
+        const locksBaseContainer = document.getElementById('locks-base-container');
+        const locksBunkerContainer = document.getElementById('locks-bunker-container');
+
+        lockImagesBase.forEach((img, idx) => {
+            locksBaseContainer.innerHTML += `
+                <div class="flex-none w-64 h-48 rounded-lg overflow-hidden shadow-sm relative group/img border border-gray-100 snap-center" onclick="openImageModal('${img}')">
+                    <img src="${img}" class="w-full h-full object-cover transform transition-transform duration-500 hover:scale-110 cursor-pointer" onerror="this.parentElement.style.display='none'">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover/img:opacity-100 transition-opacity duration-300 flex items-center justify-center pointer-events-none">
+                        <i data-lucide="zoom-in" class="text-white w-8 h-8"></i>
+                    </div>
+                </div>
+            `;
+        });
+
+        lockImagesBunker.forEach((img, idx) => {
+            locksBunkerContainer.innerHTML += `
+                <div class="flex-none w-64 h-48 rounded-lg overflow-hidden shadow-sm relative group/img border border-gray-100 snap-center" onclick="openImageModal('${img}')">
+                    <img src="${img}" class="w-full h-full object-cover transform transition-transform duration-500 hover:scale-110 cursor-pointer" onerror="this.parentElement.style.display='none'">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover/img:opacity-100 transition-opacity duration-300 flex items-center justify-center pointer-events-none">
+                        <i data-lucide="zoom-in" class="text-white w-8 h-8"></i>
+                    </div>
+                </div>
+            `;
+        });
+
+        // Hero Logic
+        const heroContainer = document.getElementById('hero-slides-container');
+        const indicatorsContainer = document.getElementById('hero-indicators');
+        let currentSlide = 0;
+
+        heroSlides.forEach((slide, idx) => {
+            const slideDiv = document.createElement('div');
+            slideDiv.className = `absolute inset-0 transition-opacity duration-1000 ease-in-out ${idx === 0 ? 'opacity-100' : 'opacity-0'} hero-slide`;
+            slideDiv.innerHTML = `
+                <img src="${slide.image}" alt="${slide.title}" class="w-full h-full object-cover animate-kenBurns">
+                <div class="absolute inset-0 flex flex-col items-center justify-center text-center px-6 z-20">
+                    <h1 class="text-4xl md:text-6xl font-bold text-white mb-4 animate-slideUp leading-tight drop-shadow-md">${slide.title}</h1>
+                    <p class="text-xl md:text-2xl text-blue-50 mb-8 max-w-3xl animate-slideUp delay-100 font-medium drop-shadow">${slide.subtitle}</p>
+                    <div class="flex gap-4 animate-slideUp delay-200">
+                        <button onclick="scrollToSection('servicios')" class="bg-mac-light text-white px-8 py-3 rounded-full font-bold hover:bg-mac-medium transition-all transform hover:-translate-y-1 shadow-lg text-base flex items-center gap-2">
+                            Ver Servicios <i data-lucide="shield" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+                </div>
+            `;
+            heroContainer.appendChild(slideDiv);
+
+            const indicator = document.createElement('button');
+            indicator.className = `h-2 rounded-full transition-all ${idx === 0 ? 'bg-mac-light w-8' : 'bg-white/50 hover:bg-white/80 w-2'} hero-dot`;
+            indicator.onclick = () => setSlide(idx);
+            indicatorsContainer.appendChild(indicator);
+        });
+
+        function setSlide(index) {
+            currentSlide = index;
+            const slides = document.querySelectorAll('.hero-slide');
+            const dots = document.querySelectorAll('.hero-dot');
+            
+            slides.forEach((s, i) => s.classList.toggle('opacity-100', i === index));
+            slides.forEach((s, i) => s.classList.toggle('opacity-0', i !== index));
+            
+            dots.forEach((d, i) => {
+                d.className = `h-2 rounded-full transition-all ${i === index ? 'bg-mac-light w-8' : 'bg-white/50 hover:bg-white/80 w-2'}`;
+            });
+        }
+
+        document.head.insertAdjacentHTML('beforeend', `
+            <style>
+                @keyframes kenBurns {
+                    0% { transform: scale(1); }
+                    100% { transform: scale(1.1); }
+                }
+                .animate-kenBurns {
+                    animation: kenBurns 20s ease-in-out infinite alternate;
+                }
+            </style>
+        `);
+
+        setInterval(() => {
+            setSlide((currentSlide + 1) % heroSlides.length);
+        }, 6000);
+
+        // --- DRAGGABLE SCROLL LOGIC FOR ALL SLIDERS ---
+        // Se aplica a cualquier elemento con clase draggable-slider
+        function initDraggableSliders() {
+            const draggableSliders = document.querySelectorAll('.draggable-slider');
+            
+            draggableSliders.forEach(slider => {
+                let isDown = false;
+                let startX;
+                let scrollLeft;
+
+                // Remove previous listeners if any (to prevent duplication on dynamic content)
+                slider.onmousedown = null;
+                slider.onmouseleave = null;
+                slider.onmouseup = null;
+                slider.onmousemove = null;
+
+                slider.addEventListener('mousedown', (e) => {
+                    isDown = true;
+                    slider.classList.add('active:cursor-grabbing');
+                    startX = e.pageX - slider.offsetLeft;
+                    scrollLeft = slider.scrollLeft;
+                });
+                slider.addEventListener('mouseleave', () => {
+                    isDown = false;
+                    slider.classList.remove('active:cursor-grabbing');
+                });
+                slider.addEventListener('mouseup', () => {
+                    isDown = false;
+                    slider.classList.remove('active:cursor-grabbing');
+                });
+                slider.addEventListener('mousemove', (e) => {
+                    if (!isDown) return;
+                    e.preventDefault();
+                    const x = e.pageX - slider.offsetLeft;
+                    const walk = (x - startX) * 2;
+                    slider.scrollLeft = scrollLeft - walk;
+                });
+            });
+        }
+
+        const clientsScrollContainer = document.getElementById('clients-scroll-container');
+        const imagesList = [...clientImages, ...clientImages, ...clientImages];
+        imagesList.forEach((img, index) => {
+            clientsScrollContainer.innerHTML += `
+                <div class="flex-none w-80 h-56 rounded-lg overflow-hidden shadow-sm relative group/img border border-gray-100 snap-center" onclick="openImageModal('${img}')">
+                    <img src="${img}" class="w-full h-full object-cover transform transition-transform duration-500 hover:scale-110 cursor-pointer">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover/img:opacity-100 transition-opacity duration-300 flex items-center justify-center pointer-events-none">
+                        <i data-lucide="zoom-in" class="text-white w-8 h-8"></i>
+                    </div>
+                </div>
+            `;
+        });
+        
+        // Init draggable for static sliders
+        initDraggableSliders();
+
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('menu-icon');
+            const isOpen = !menu.classList.contains('translate-x-full');
+            
+            if (isOpen) {
+                menu.classList.add('translate-x-full');
+                icon.setAttribute('data-lucide', 'menu');
+                document.body.style.overflow = 'auto';
+            } else {
+                menu.classList.remove('translate-x-full');
+                icon.setAttribute('data-lucide', 'x');
+                document.body.style.overflow = 'hidden';
+            }
+            lucide.createIcons();
+        }
+
+        function scrollToSection(id) {
+            showHome();
+            setTimeout(() => {
+                const element = document.getElementById(id);
+                if (element) {
+                    const offset = 80;
+                    const bodyRect = document.body.getBoundingClientRect().top;
+                    const elementRect = element.getBoundingClientRect().top;
+                    const elementPosition = elementRect - bodyRect;
+                    const offsetPosition = elementPosition - offset;
+
+                    window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+                }
+                const menu = document.getElementById('mobile-menu');
+                if (!menu.classList.contains('translate-x-full')) toggleMenu();
+            }, 100);
+        }
+
+        function openImageModal(src) {
+            const modal = document.getElementById('image-modal');
+            const modalImg = document.getElementById('modal-image');
+            
+            modalImg.src = src;
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                modal.classList.remove('opacity-0');
+                modalImg.classList.remove('scale-95');
+                modalImg.classList.add('scale-100');
+            }, 10);
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeImageModal() {
+            const modal = document.getElementById('image-modal');
+            const modalImg = document.getElementById('modal-image');
+
+            modal.classList.add('opacity-0');
+            modalImg.classList.remove('scale-100');
+            modalImg.classList.add('scale-95');
+            
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                modalImg.src = '';
+            }, 300);
+            document.body.style.overflow = 'auto';
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === "Escape") {
+                closeImageModal();
+            }
+        });
+
+        // --- SERVICE DETAIL WITH IMAGE FILTERING ---
+        let currentDetailSlide = 0;
+        let detailSliderInterval;
+        let currentServiceGallery = [];
+
+        async function openServiceDetail(id) {
+            const service = servicesData.find(s => s.id === id);
+            if (!service) return;
+
+            const loader = document.getElementById('service-loader');
+            loader.classList.remove('hidden');
+            document.getElementById('service-view').classList.remove('hidden-view');
+            document.getElementById('home-view').classList.add('hidden-view');
+            window.scrollTo(0, 0);
+
+            // Filter valid images
+            currentServiceGallery = await filterValidImages(service.gallery);
+            
+            // Filter valid images for locks
+            let validLocks = [];
+            if (service.locks) {
+                validLocks = await filterValidImages(service.locks.images);
+            }
+            
+            loader.classList.add('hidden');
+
+            currentDetailSlide = 0;
+            clearInterval(detailSliderInterval);
+
+            const content = document.getElementById('service-content');
+            
+            // Sección de Cerraduras (condicional y filtrada) - AHORA COMO SLIDER
+            let locksSection = '';
+            if (service.locks && validLocks.length > 0) {
+                locksSection = `
+                    <div class="mt-12 bg-gray-50 rounded-2xl p-8 border border-gray-100 animate-slideUp">
+                        <h3 class="text-2xl font-bold text-mac-dark flex items-center gap-2 mb-6">
+                            <i data-lucide="lock" class="text-mac-light"></i> ${service.locks.title}
+                        </h3>
+                        <div class="relative w-full">
+                            <div class="draggable-slider flex gap-4 overflow-x-auto cursor-grab active:cursor-grabbing no-scrollbar px-1 pb-4 snap-x">
+                                ${validLocks.map(img => `
+                                    <div class="flex-none w-64 h-48 rounded-lg overflow-hidden shadow-sm relative group/img border border-gray-100 snap-center" onclick="openImageModal('${img}')">
+                                        <img src="${img}" class="w-full h-full object-cover transform transition-transform duration-500 hover:scale-110 cursor-pointer">
+                                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover/img:opacity-100 transition-opacity duration-300 flex items-center justify-center pointer-events-none">
+                                            <i data-lucide="zoom-in" class="text-white w-8 h-8"></i>
+                                        </div>
+                                    </div>
+                                `).join('')}
+                            </div>
+                            <div class="absolute top-0 bottom-4 right-0 w-12 bg-gradient-to-l from-gray-50 to-transparent pointer-events-none"></div>
+                        </div>
+                        <p class="text-sm text-gray-400 mt-2"><i data-lucide="hand" class="inline w-3 h-3 mr-1"></i> Desliza para ver más</p>
+                    </div>
+                `;
+            }
+
+            content.innerHTML = `
+                <button onclick="showHome()" class="fixed top-24 left-6 z-50 bg-white shadow-md border border-gray-100 p-2.5 rounded-full text-gray-600 hover:text-mac-dark hover:scale-105 transition-all group">
+                    <i data-lucide="arrow-left" class="w-5 h-5"></i>
+                </button>
+
+                <div class="container mx-auto px-6 py-12">
+                    <div class="mb-10 text-center md:text-left border-b border-gray-100 pb-8">
+                         <span class="text-mac-light font-bold text-sm uppercase tracking-widest mb-2 block">
+                            Servicio Especializado
+                        </span>
+                        <h1 class="text-3xl md:text-5xl font-bold text-mac-dark mb-2">${service.title}</h1>
+                        <p class="text-xl text-gray-500 font-medium">${service.subtitle}</p>
+                    </div>
+
+                    <div class="flex flex-col lg:flex-row gap-12">
+                        <div class="w-full lg:w-1/2">
+                            <div class="sticky top-28">
+                                <div class="relative h-[400px] md:h-[500px] w-full overflow-hidden rounded-2xl shadow-lg border border-gray-100 bg-gray-100 group">
+                                    <div id="detail-slider-container" class="absolute inset-0 cursor-pointer" onclick="openImageModal(document.querySelector('#detail-slider-container .active img').src)">
+                                        ${currentServiceGallery.length > 0 ? currentServiceGallery.map((img, idx) => `
+                                            <div class="detail-slide absolute inset-0 transition-opacity duration-500 ease-in-out ${idx === 0 ? 'active' : 'opacity-0'}">
+                                                <img src="${img}" class="w-full h-full object-cover">
+                                            </div>
+                                        `).join('') : '<div class="flex items-center justify-center h-full text-gray-400">Sin imágenes disponibles</div>'}
+                                        
+                                        <!-- Overlay de Zoom Icon -->
+                                        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none bg-black/10">
+                                            <div class="bg-black/50 p-3 rounded-full backdrop-blur-sm">
+                                                <i data-lucide="zoom-in" class="text-white w-8 h-8"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    ${currentServiceGallery.length > 1 ? `
+                                    <div class="absolute inset-0 flex items-center justify-between px-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                                        <button onclick="event.stopPropagation(); prevDetailSlide()" class="bg-white/80 hover:bg-white text-mac-dark p-2 rounded-full shadow-md backdrop-blur-sm transition-all pointer-events-auto">
+                                            <i data-lucide="chevron-left" class="w-6 h-6"></i>
+                                        </button>
+                                        <button onclick="event.stopPropagation(); nextDetailSlide()" class="bg-white/80 hover:bg-white text-mac-dark p-2 rounded-full shadow-md backdrop-blur-sm transition-all pointer-events-auto">
+                                            <i data-lucide="chevron-right" class="w-6 h-6"></i>
+                                        </button>
+                                    </div>
+                                    
+                                    <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2 pointer-events-none">
+                                        ${currentServiceGallery.map((_, idx) => `
+                                            <button onclick="event.stopPropagation(); setDetailSlide(${idx})" class="h-1.5 rounded-full transition-all shadow-sm ${idx === 0 ? 'bg-white w-6' : 'bg-white/60 hover:bg-white w-1.5'} detail-dot pointer-events-auto"></button>
+                                        `).join('')}
+                                    </div>
+                                    ` : ''}
+                                </div>
+                                <p class="text-center text-xs text-gray-400 mt-3 flex items-center justify-center gap-1"><i data-lucide="info" class="w-3 h-3"></i> Imágenes ilustrativas de proyectos reales.</p>
+                            </div>
+                        </div>
+
+                        <div class="w-full lg:w-1/2 space-y-8 animate-slideUp">
+                            <div class="prose prose-blue max-w-none">
+                                <h3 class="text-xl font-bold text-mac-dark flex items-center gap-2 mb-4">
+                                    <i data-lucide="file-text" class="text-mac-light"></i> Descripción General
+                                </h3>
+                                <p class="text-gray-600 leading-relaxed text-lg">${service.details.intro}</p>
+                            </div>
+
+                            <div class="bg-blue-50/50 rounded-2xl p-6 md:p-8 border border-blue-50">
+                                <h3 class="text-xl font-bold text-mac-dark flex items-center gap-2 mb-6">
+                                    <i data-lucide="check-circle-2" class="text-mac-light"></i> Especificaciones Técnicas
+                                </h3>
+                                <ul class="space-y-4">
+                                    ${service.details.points.map(p => {
+                                        const parsedPoint = p.replace(/\*\*(.*?)\*\*/g, '<strong class="text-mac-dark font-semibold">$1</strong>');
+                                        return `
+                                        <li class="flex items-start gap-3 text-gray-700">
+                                            <div class="mt-1.5 min-w-[6px] h-1.5 rounded-full bg-mac-light"></div>
+                                            <span class="leading-relaxed text-base">${parsedPoint}</span>
+                                        </li>
+                                    `}).join('')}
+                                </ul>
+                            </div>
+
+                            <!-- SECCIÓN CERRADURAS INSERTADA AQUÍ (SI CORRESPONDE) -->
+                            ${locksSection}
+
+                            <div class="bg-mac-dark text-white rounded-2xl p-8 shadow-xl relative overflow-hidden">
+                                <div class="absolute top-0 right-0 -mt-6 -mr-6 w-32 h-32 bg-white/5 rounded-full blur-2xl"></div>
+                                <h4 class="text-xl font-bold mb-3 relative z-10">¿Es lo que buscas?</h4>
+                                <p class="text-blue-100 mb-6 text-sm relative z-10">Solicita un presupuesto detallado para este servicio ahora.</p>
+                                <button onclick="scrollToSection('contacto')" class="w-full bg-mac-light text-white py-3.5 rounded-lg font-bold hover:bg-mac-medium transition-colors shadow-md flex justify-center items-center gap-2 relative z-10">
+                                    Solicitar Presupuesto <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            lucide.createIcons();
+            initDraggableSliders(); // Re-inicializar drag para los sliders dinámicos
+            
+            if(currentServiceGallery.length > 1) {
+                detailSliderInterval = setInterval(nextDetailSlide, 4000);
+            }
+        }
+
+        function setDetailSlide(index) {
+            currentDetailSlide = index;
+            updateDetailSlider();
+            clearInterval(detailSliderInterval);
+            if(currentServiceGallery.length > 1) detailSliderInterval = setInterval(nextDetailSlide, 4000);
+        }
+
+        function nextDetailSlide() {
+            if(currentServiceGallery.length <= 1) return;
+            currentDetailSlide = (currentDetailSlide + 1) % currentServiceGallery.length;
+            updateDetailSlider();
+        }
+
+        function prevDetailSlide() {
+            if(currentServiceGallery.length <= 1) return;
+            currentDetailSlide = (currentDetailSlide - 1 + currentServiceGallery.length) % currentServiceGallery.length;
+            updateDetailSlider();
+        }
+
+        function updateDetailSlider() {
+            const slides = document.querySelectorAll('.detail-slide');
+            const dots = document.querySelectorAll('.detail-dot');
+            
+            slides.forEach((s, i) => s.classList.toggle('active', i === currentDetailSlide));
+            slides.forEach((s, i) => s.classList.toggle('opacity-0', i !== currentDetailSlide));
+            
+            dots.forEach((d, i) => {
+                if(d) d.className = `h-1.5 rounded-full transition-all shadow-sm ${i === currentDetailSlide ? 'bg-white w-6' : 'bg-white/60 hover:bg-white w-1.5'} detail-dot pointer-events-auto`;
+            });
+        }
+
+        function showHome() {
+            clearInterval(detailSliderInterval);
+            document.getElementById('service-view').classList.add('hidden-view');
+            document.getElementById('home-view').classList.remove('hidden-view');
+        }
+
+        function handleForm(e) {
+            e.preventDefault();
+            const btn = document.getElementById('form-btn');
+            const statusDiv = document.getElementById('form-status');
+            const form = document.getElementById('contact-form');
+            const originalText = btn.innerHTML;
+            
+            btn.innerHTML = `<i data-lucide="loader-2" class="w-5 h-5 animate-spin"></i> Enviando...`;
+            btn.disabled = true;
+            statusDiv.classList.add('hidden');
+            lucide.createIcons();
+
+            const formData = new FormData(form);
+
+            fetch('send_mail.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === 'success') {
+                    btn.innerHTML = `<i data-lucide="check" class="w-5 h-5"></i> ¡Enviado!`;
+                    btn.classList.remove('bg-mac-dark');
+                    btn.classList.add('bg-green-600');
+                    
+                    statusDiv.innerHTML = data.message;
+                    statusDiv.className = 'block text-center p-3 rounded-lg text-sm font-medium text-green-700 bg-green-100 mt-4 fade-in';
+                    
+                    form.reset();
+                    
+                    setTimeout(() => {
+                        btn.innerHTML = originalText;
+                        btn.classList.add('bg-mac-dark');
+                        btn.classList.remove('bg-green-600');
+                        btn.disabled = false;
+                        statusDiv.classList.add('hidden');
+                    }, 5000);
+                } else {
+                    throw new Error(data.message || 'Error desconocido');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                btn.innerHTML = originalText;
+                btn.disabled = false;
+                statusDiv.innerHTML = error.message || 'Hubo un error al enviar. Intenta nuevamente.';
+                statusDiv.className = 'block text-center p-3 rounded-lg text-sm font-medium text-red-700 bg-red-100 mt-4 fade-in';
+            })
+            .finally(() => {
+                lucide.createIcons();
+            });
+        }
+
+        function initObserver() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, { threshold: 0.1 });
+            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        }
+
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                navbar.classList.remove('h-24');
+                navbar.classList.add('h-20', 'shadow-md');
+            } else {
+                navbar.classList.remove('h-20', 'shadow-md');
+                navbar.classList.add('h-24');
+            }
+        });
+
+        window.addEventListener('load', () => {
+            lucide.createIcons();
+            initObserver();
+            window.dispatchEvent(new Event('scroll'));
+        });
+
+    </script>
+</body>
+</html>

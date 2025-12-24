@@ -1,0 +1,54 @@
+.social-buttons {
+    position: fixed;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 99;
+  }
+  
+  .social-button {
+    display: block;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    color: white;
+    text-align: center;
+    line-height: 50px;
+    margin-bottom: 10px;
+    text-decoration: none;
+  }
+  
+  .social-button i {
+    vertical-align: middle;
+  }
+  
+  .instagram {
+    background-color: #E1306C;
+  }
+  
+  .tiktok {
+    background-color: #000000;
+  }
+  
+  .linkedin {
+    background-color: #0077B5;
+  }
+  
+  .whatsapp-button {
+    z-index: 99;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    right: 20px;
+    bottom: 20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #25D366;
+    color: white;
+    text-align: center;
+    line-height: 60px;
+    font-size: 46px;
+    text-decoration: none;
+  }

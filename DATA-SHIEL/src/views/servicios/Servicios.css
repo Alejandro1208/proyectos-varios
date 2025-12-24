@@ -1,0 +1,90 @@
+/* GRID GENERAL */
+.servicios-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2.2rem;
+  padding: 3rem;
+  background: #f5f5f7;
+}
+
+/* CARD BASE (ESTADO INICIAL – INVISIBLE PARA ANIMACIÓN) */
+.service {
+  background: rgba(255, 255, 255, 0.75);
+  border-radius: 20px;
+  padding: 2rem 1.8rem;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.07);
+  backdrop-filter: blur(8px);
+
+  opacity: 0;
+  transform: translateY(35px);
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease,
+    backdrop-filter 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* CUANDO LA CARD APARECE EN PANTALLA */
+.service-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* HOVER — EFECTO GLASS + SOMBRA + LEVANTAMIENTO */
+.service:hover {
+  transform: translateY(-8px);
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 16px 28px rgba(0,0,0,0.18);
+  backdrop-filter: blur(14px);
+}
+
+/* EFECTO DE BRILLO LATERAL SUAVE */
+.service::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.4),
+    transparent
+  );
+  transition: 0.7s;
+}
+
+.service:hover::before {
+  left: 100%;
+}
+
+/* TITULOS */
+.service h3 {
+  margin-bottom: 1rem;
+  color: #111;
+  font-size: 1.3rem;
+  line-height: 1.3;
+}
+
+/* TEXTO */
+.service p {
+  color: #444;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .servicios-content {
+    padding: 1.5rem;
+  }
+  .service {
+    padding: 1.5rem 1.2rem;
+  }
+}
+
+  

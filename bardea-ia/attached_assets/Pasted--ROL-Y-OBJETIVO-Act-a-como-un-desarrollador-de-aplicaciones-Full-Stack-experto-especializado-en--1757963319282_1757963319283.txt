@@ -1,0 +1,41 @@
+
+
+[ROL Y OBJETIVO]
+Actúa como un desarrollador de aplicaciones Full-Stack experto, especializado en la creación de MVP para aplicaciones móviles virales con un fuerte componente social y cultural. Tu objetivo es diseñar y planificar el desarrollo de la primera versión de una aplicación móvil llamada "BardeaIA".
+[CONCEPTO CENTRAL DE LA APP]
+Nombre: BardeaIA Slogan: Tu copiloto en el bardeo. Propósito: Es una herramienta de ingenio social que ayuda a los usuarios a generar respuestas ingeniosas y divertidas para el "bardeo" (tomada de pelo amistosa) con amigos en chats. La app utiliza IA para entender no solo el mensaje recibido, sino también el contexto de la situación, generando respuestas personalizadas y letales.
+[CONTEXTO CULTURAL CLAVE]
+El "bardeo" no es bullying ni un insulto malicioso; es una forma de humor y camaradería basada en la rapidez mental, la ironía y el ingenio. Las respuestas deben ser graciosas y creativas, no hirientes. Deben incorporar jerga y modismos locales (lunfardo argentino) para sentirse auténticas. El objetivo es "ganar" la discusión a través del humor.
+[FLUJO DE USUARIO (USER FLOW) - MVP]
+1. El usuario recibe un mensaje de un amigo en una app de chat (WhatsApp, Instagram, etc.).
+2. El usuario copia el texto del mensaje.
+3. Abre la app BardeaIA.
+4. Pega el mensaje copiado en el campo principal: "Mensaje a responder".
+5. (Clave) Opcionalmente, añade información en el segundo campo: "Contexto de la situación". (Ej: "Estamos en un asado con amigos", "Es hincha de Boca y yo de River", "Me lo dijo en la oficina").
+6. Selecciona el tono deseado para la respuesta.
+7. Presiona el botón "Generar Bardeo".
+8. La app muestra en una nueva pantalla entre 3 y 5 respuestas sugeridas.
+9. Cada respuesta tiene un botón de "Copiar" de un solo clic.
+10. El usuario elige su respuesta favorita, la copia, vuelve a su chat y la envía.
+[CARACTERÍSTICAS DEL MVP (MÍNIMO PRODUCTO VIABLE)]
+1. Pantalla Principal (HomeScreen): * Dos campos de texto: 1. Un campo principal para el "Mensaje a responder". 2. Un campo secundario, opcional, para el "Contexto", con ejemplos en gris claro (placeholder) para guiar al usuario. * Una sección con botones o un selector para elegir el tono de la respuesta: * 🔥 Picante * 😏 Sarcástico * 😂 Chistoso * 🤓 Inteligente * Un botón principal "Generar Bardeo".
+2. Pantalla de Resultados (ResultsScreen): * Muestra una lista vertical de las 3-5 respuestas generadas, personalizadas según el mensaje y el contexto. * Cada respuesta en una tarjeta individual con un botón de "Copiar".
+3. Pantalla de Historial (HistoryScreen): * Una lista simple de las últimas respuestas que el usuario ha copiado.
+4. Lógica de Backend: * La generación de respuestas se hará vía una llamada a una API de un modelo de lenguaje avanzado (LLM). * El prompt enviado a la API debe incluir tres variables clave: el mensaje del amigo, el contexto de la situación y el tono seleccionado. La combinación de estas tres entradas es lo que hará que la app sea única y potente.
+[PRINCIPIOS GUÍA Y RESTRICCIONES TÉCNICAS]
+* Sin Integración Directa: El flujo de copiar y pegar es intencional para garantizar la privacidad del usuario y la velocidad de desarrollo.
+* Prioridad en la Velocidad: La experiencia debe ser extremadamente rápida.
+* Enfoque en la Calidad del Contenido: La capacidad de la IA para usar el contexto es la característica más importante.
+[TAREAS A REALIZAR]
+Basado en toda esta información, por favor, realiza las siguientes tareas en orden:
+1. Genera un Mockup Visual: Crea un diseño de interfaz (UI) simple y moderno para la Pantalla Principal, mostrando claramente los dos campos de entrada ("Mensaje" y "Contexto") y los selectores de tono. Luego, diseña la Pantalla de Resultados.
+2. Define el Plan de Desarrollo del MVP:
+    * Sugiere un stack tecnológico adecuado.
+    * Establece los pasos principales para el desarrollo, destacando la importancia de la ingeniería del prompt para la API.
+    * Proporciona una estimación de tiempo para lanzar este MVP.
+3. Crea Ejemplos de Contenido Contextual: Para demostrar el poder de la app, genera respuestas para el siguiente escenario:
+    * Mensaje a responder: "Linda remera, ¿no había de tu talle?"
+    * Genera 3 respuestas en tono "Sarcástico" para cada uno de estos 3 contextos diferentes:
+        * Contexto 1: "Estamos en la oficina."
+        * Contexto 2: "Me lo dijo mi cuñado en una cena familiar."
+        * Contexto 3: "En un grupo de WhatsApp de amigos del fútbol."

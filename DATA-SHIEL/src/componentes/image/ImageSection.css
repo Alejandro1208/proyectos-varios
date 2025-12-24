@@ -1,0 +1,69 @@
+.image-section {
+    background: url('./img/fondod.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+  }
+  
+  .card-dos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    padding: 20px;
+    max-width: 1000px;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: px 10px 30px rgba(0, 0, 0, 0.7);
+  }
+  
+  .card-dos h2 {
+    font-size: 2em;
+    margin-bottom: 1em;
+  }
+  .card-dos p {
+    font-size: 1em;
+    line-height: 1.6;
+    margin-bottom: 1em;
+  }
+
+  .contenedor-servicios-dos{
+    display: block;
+    text-align: center;
+    height: 30vh;
+    margin-top: 120px;
+    padding-left: 150px;
+    padding-right: 150px;
+    
+}
+@media (max-width: 600px){
+  .card-dos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    padding: 20px;
+    max-width: 1000px;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: px 10px 30px rgba(0, 0, 0, 0.7);
+  }
+  .card-dos img{
+    width: 100px;
+  }
+  .image-section {
+    background: url('./img/fondod.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 110vh;
+  }
+}

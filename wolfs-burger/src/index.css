@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, rgb(var(--color-accent)) 0%, rgb(var(--color-primary)) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+@layer components {
+  .btn-solid-red {
+    @apply inline-block bg-primary text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg border-2 border-primary hover:bg-transparent hover:text-white;
+  }
+  .btn-outline-white {
+    @apply inline-block bg-white text-primary font-semibold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg border-2 border-white hover:bg-transparent hover:text-white;
+  }
+    .input-styled {
+    @apply mt-1 block w-full rounded-md border-gray-200 bg-gray-50 px-3 py-2 shadow-sm transition-colors duration-200;
+    @apply focus:border-indigo-500 focus:bg-white focus:ring focus:ring-indigo-200 focus:ring-opacity-50;
+  }
+  
+  .btn-secondary {
+    @apply bg-gray-200 text-gray-800 hover:bg-gray-300 font-semibold py-2 px-4 rounded-md shadow-sm transition-colors flex items-center gap-2;
+  }
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}

@@ -1,0 +1,79 @@
+  /*pie de pagina*/
+
+  footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+  }
+  
+  .footer-content {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .footer-content .logo a,
+  .footer-content nav a,
+  .footer-content .legal a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .footer-content nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+  }
+  
+  .footer-content nav li {
+    margin: 0 10px;
+  }
+  
+  .footer-content .legal {
+    display: flex;
+    padding-top: 10px;
+    flex-direction: column;
+  }
+  .footer-content .legal a{
+    padding-top: 10px;
+  }
+  
+  .footer-content .copyright {
+    font-size: 14px;
+  }
+
+  @media (max-width: 600px){
+    footer{
+      padding: 20px;
+      padding-top: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .footer-content{
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .footer-content ul{
+      display: flex;
+      flex-direction: column;
+      padding: 50px;
+      justify-content: center;
+      align-items: center;
+    }
+    .footer-content li{
+      padding: 5px;
+    }
+    .footer-content .logo{
+      font-size: 50px;
+    }
+    .footer-content nav, .footer-content .logo, .footer-content .legal, .footer-content .copyright{
+      margin: 25px;
+    }
+  }

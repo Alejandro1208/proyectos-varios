@@ -1,0 +1,11 @@
+RewriteEngine On
+RewriteBase /
+
+# No tocar las rutas de la API ni archivos reales
+RewriteRule ^api/ - [L]
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Todo lo demás que no exista, mandar a index.html
+RewriteRule . /index.html [L]

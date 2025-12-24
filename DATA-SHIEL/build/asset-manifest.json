@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/static/css/main.721b5340.chunk.css",
+    "main.js": "/static/js/main.12e86f40.chunk.js",
+    "main.js.map": "/static/js/main.12e86f40.chunk.js.map",
+    "runtime~main.js": "/static/js/runtime~main.5fd0fd28.js",
+    "runtime~main.js.map": "/static/js/runtime~main.5fd0fd28.js.map",
+    "static/css/2.4707e12a.chunk.css": "/static/css/2.4707e12a.chunk.css",
+    "static/js/2.5f62202e.chunk.js": "/static/js/2.5f62202e.chunk.js",
+    "static/js/2.5f62202e.chunk.js.map": "/static/js/2.5f62202e.chunk.js.map",
+    "static/js/3.df7899f0.chunk.js": "/static/js/3.df7899f0.chunk.js",
+    "static/js/3.df7899f0.chunk.js.map": "/static/js/3.df7899f0.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.820b156565cb7e7a652bd106638c6bad.js": "/precache-manifest.820b156565cb7e7a652bd106638c6bad.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/2.4707e12a.chunk.css.map": "/static/css/2.4707e12a.chunk.css.map",
+    "static/css/main.721b5340.chunk.css.map": "/static/css/main.721b5340.chunk.css.map",
+    "static/media/Justice-amico.svg": "/static/media/Justice-amico.204a0524.svg",
+    "static/media/Banner.css": "/static/media/banner-dos.eb92a893.png",
+    "static/media/banner-medio.jpeg": "/static/media/banner-medio.c7df869a.jpeg",
+    "static/media/banner-paquetes.jpg": "/static/media/banner-paquetes.4fa3cc0c.jpg",
+    "static/media/banner-servicios.jpg": "/static/media/banner-servicios.ce583a23.jpg",
+    "static/media/PackagesContainer.css": "/static/media/banner-tres.e909efef.png",
+    "static/media/ImageSection.css": "/static/media/fondod.3d49d42b.jpg",
+    "static/media/logo.png": "/static/media/logo.3e2d3b45.png"
+  }
+}

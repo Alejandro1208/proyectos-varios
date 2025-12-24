@@ -1,0 +1,43 @@
+    at async <anonymous> (/home/runner/workspace/server/routes.ts:16:25)
+7:41:51 PM [express] POST /api/generate 500 in 288ms :: {"success":false,"error":"Failed to generate…
+Error generating responses: AuthenticationError: 401 Incorrect API key provided: AIzaSyCm***************************POCc. You can find your API key at https://platform.openai.com/account/api-keys.
+    at Function.generate (/home/runner/workspace/node_modules/openai/src/core/error.ts:76:14)
+    at OpenAI.makeStatusError (/home/runner/workspace/node_modules/openai/src/client.ts:463:28)
+    at OpenAI.makeRequest (/home/runner/workspace/node_modules/openai/src/client.ts:713:24)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async generateBardeaResponses (/home/runner/workspace/server/openai.ts:55:22)
+    at async <anonymous> (/home/runner/workspace/server/routes.ts:16:25) {
+  status: 401,
+  headers: Headers {
+    date: 'Mon, 15 Sep 2025 19:42:09 GMT',
+    'content-type': 'application/json; charset=utf-8',
+    'content-length': '289',
+    connection: 'keep-alive',
+    vary: 'Origin',
+    'x-request-id': 'req_b7f7d60506c34daab21adb7fb64e04f9',
+    'x-envoy-upstream-service-time': '24',
+    'x-openai-proxy-wasm': 'v0.1',
+    'cf-cache-status': 'DYNAMIC',
+    'set-cookie': '__cf_bm=NnLzDwoGD.2E.UJcXmWwihu05kw6tVeLocNPI.jKEFU-1757965329-1.0.1.1-sPSQf5r0DZMmoKeYNBUAJ0F5ltqxWsMyhYk.xmWVGBpvWjKDNVUlgqc2_tBaxQCWA0TRC_ywCkerozVWSqbUvxWRfiUnYv86RlspYduM.yo; path=/; expires=Mon, 15-Sep-25 20:12:09 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None, _cfuvid=trZG.l80ouohOGqLxkuX9HeDPF4hKM4GUHA.td5Ic3w-1757965329431-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None',
+    'strict-transport-security': 'max-age=31536000; includeSubDomains; preload',
+    'x-content-type-options': 'nosniff',
+    server: 'cloudflare',
+    'cf-ray': '97fa9b0c3a7197b4-ATL',
+    'alt-svc': 'h3=":443"; ma=86400'
+  },
+  requestID: 'req_b7f7d60506c34daab21adb7fb64e04f9',
+  error: {
+    message: 'Incorrect API key provided: AIzaSyCm***************************POCc. You can find your API key at https://platform.openai.com/account/api-keys.',
+    type: 'invalid_request_error',
+    param: null,
+    code: 'invalid_api_key'
+  },
+  code: 'invalid_api_key',
+  param: null,
+  type: 'invalid_request_error'
+}
+Error generating responses: Error: Failed to generate responses. Please try again.
+    at generateBardeaResponses (/home/runner/workspace/server/openai.ts:75:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async <anonymous> (/home/runner/workspace/server/routes.ts:16:25)
+7:42:09 PM [express] POST /api/generate 500 in 160ms :: {"success":false,"error":"Failed to generate…

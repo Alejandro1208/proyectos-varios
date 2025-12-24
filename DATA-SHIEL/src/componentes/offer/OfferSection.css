@@ -1,0 +1,29 @@
+ .section {
+    background: transparent;
+    height: auto;
+    padding-top: 1px;
+    padding-top: -50px;
+  }
+  
+  .section-content {
+    background-color: #fff;
+    max-width: 1300px;
+    margin-top: -30px;
+    width: 70%;
+    padding: 20px;
+    margin: -30px 0;
+    color: #000000;
+    backdrop-filter: blur(4px);
+  }
+  
+  .section h2 {
+    font-size: 2em;
+    margin-bottom: 1em;
+  }
+  
+  .section p {
+    font-size: 1em;
+    line-height: 1.6;
+    margin-bottom: 1em;
+    color: #1f1e1e;
+  }

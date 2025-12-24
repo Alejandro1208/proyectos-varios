@@ -1,0 +1,120 @@
+header {
+    background-color: #eeeeef;
+    z-index: 3;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+
+  }
+  
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    padding: 0 50px;
+  }
+  
+  .menu-icon {
+    font-size: 30px;
+    cursor: pointer;
+    display: none;
+  }
+  
+  .logo a {
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-decoration: none;
+    color: #000000;
+  }
+  
+  .menu {
+    position: relative;
+    height: auto;
+    background-color: transparent;
+  }
+  
+  .menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+  .menu li {
+    margin: 0 20px;
+  }
+  
+  .menu a {
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none;
+    color: #282828;
+    padding-bottom: 30px;
+    transition: all 0.3s ease;
+  }
+  
+  .menu a:hover {
+    color: #2b2bdd;
+    border-bottom:4px solid #3504e7;
+    padding-bottom: 27px;
+  }
+  
+  .menu-icon.open i:before {
+    content: '\f00d';
+  }
+  
+  @media (max-width: 768px) {
+    header{
+        position: fixed;
+    }
+    .menu-icon {
+      display: block;
+    }
+  
+    .menu {
+      position: fixed;
+      top: 80px;
+      left: 0;
+      width: 100%;
+      height: 40%;
+      background-color: #d4d4f5;
+      display: none;
+      overflow-y: scroll;
+      z-index: 99;
+    }
+  
+    .menu.active {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100vw;
+    }
+  
+    .menu ul {
+        display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 80%;
+    }
+  
+    .menu li {
+      margin: 20px 0;
+    }
+  
+    .menu a {
+      font-size: 14px;
+    }
+    .menu a:hover {
+        color: #5C41BF;
+        border-bottom:2px solid #5C41BF;
+        padding-bottom: 10px;
+      }
+  }

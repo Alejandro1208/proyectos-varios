@@ -1,0 +1,64 @@
+/* ESTADO INICIAL */
+.banner-medio {
+  height: 50vh;
+  min-height: 350px;
+  width: 100vw;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+
+  opacity: 0;
+  transform: translateY(40px) scale(1);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+/* OVERLAY */
+.banner-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.45),
+    rgba(0, 0, 0, 0.25)
+  );
+  z-index: 1;
+}
+
+/* TÍTULO */
+.banner-title {
+  position: relative;
+  z-index: 2;
+  color: white;
+  font-size: 4rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-shadow: 0 3px 10px rgba(0,0,0,0.7),
+               0 0 25px rgba(255,255,255,0.25);
+}
+
+/* ESTADO CUANDO ENTRA EN PANTALLA */
+.banner-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1.03);
+  animation: bannerZoom 10s ease forwards;
+}
+
+/* ANIMACIÓN DE ZOOM SUAVE */
+@keyframes bannerZoom {
+  from { transform: scale(1.03); }
+  to   { transform: scale(1.08); }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .banner-title {
+    font-size: 2.6rem;
+  }
+  .banner-medio {
+  width: 96.145vw;
+}
+}

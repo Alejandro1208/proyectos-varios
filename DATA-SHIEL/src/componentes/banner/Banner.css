@@ -1,0 +1,135 @@
+.banner {
+    position: relative;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+     /* background: linear-gradient(to right, #b9b3d0, #8acbd7);*/
+    background-image: url('img/banner-dos.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 1;
+
+    overflow: hidden;
+  }
+  .banner svg {
+    position: absolute;
+    bottom: -20px;
+    width: 100%;
+    height: auto;
+    z-index: 0;
+    pointer-events: none;
+    color: linear-gradient(82deg,rgba(177, 137, 46, 1) 44%, rgba(12, 12, 12, 1) 100%);
+  }
+  
+  .banner-content {
+    text-align: left;
+    padding: 80px;
+    width: 50%;
+    color: #fdfdfd;
+    position: absolute;
+    z-index: 2;
+
+  }
+  
+  .title {
+    font-size: 5em;
+    margin-bottom: 0.1em;
+    text-shadow: 0 1px 0 #ccc, 
+    0 2px 0 #c9c9c9,
+    0 3px 0 #bbb,
+    0 4px 0 #b9b9b9,
+    0 5px 0 #aaa,
+    0 6px 1px rgba(0,0,0,.1),
+    0 0 5px rgba(0,0,0,.1),
+    0 1px 3px rgba(0,0,0,.3),
+    0 3px 5px rgba(0,0,0,.2),
+    0 5px 10px rgba(0,0,0,.25),
+    0 10px 10px rgba(0,0,0,.2),
+    0 20px 20px rgba(0,0,0,.15);
+    
+  }
+  
+  .subtitle {
+    font-size: 21px;
+    margin-bottom: 1em;
+    color: white;
+  }
+  
+  .button-one {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1.5em;
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #0c0c0c;
+    margin-right: 15px;
+    background-image: linear-gradient(315deg, #d6b24b 0%, #b1892e 100%);
+    border: 1px solid #0c0c0c;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .button-two {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1.5em;
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #0c0c0c;
+    background-image: linear-gradient(315deg, #d6b24b 0%, #b1892e 100%);
+    border: 1px solid #0c0c0c;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  .button-one:hover{
+    color: #000000;
+  }
+  .button-two:hover{
+    color: #000000;
+  }
+
+  #particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+  /*ico*/
+.ico{
+  right: 0px;
+  margin-top: 20px;
+  position: absolute;
+}
+stop .uno{
+  color:#b9b3d0;
+  opacity: 1;
+}
+stop .dos{
+  color:#7bb5bf;
+  opacity: 1;
+}
+
+@media (max-width: 768px){
+    .title{
+        font-size: 55px;
+    }
+    .subtitle{
+        font-size: 17px;
+    }
+    .banner-content{
+        padding-left: 20px;
+        width: 90%;
+    }
+    .ico {
+      position: absolute;
+      bottom: 50px;
+      left:30px;
+      width: 350px;
+      height: auto;
+    }
+    .banner svg{
+      padding-bottom: 18px;
+    }
+  }
