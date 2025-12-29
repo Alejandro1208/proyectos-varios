@@ -52,8 +52,8 @@ const BubbleGame: React.FC = () => {
       className="relative min-h-screen w-full bg-slate-50 dark:bg-gray-950 overflow-hidden transition-colors duration-500"
     >
       <div className="absolute top-28 left-0 right-0 text-center z-10 px-6">
-        <h2 className="text-3xl font-black text-gray-800 dark:text-white tracking-tight">Ruido Visual</h2>
-        <p className="text-gray-400 dark:text-gray-500 font-bold text-sm max-w-xs mx-auto">Está bien sentir caos. Vamos a despejarlo poco a poco.</p>
+        <h2 className="text-3xl font-black text-gray-800 dark:text-white tracking-tight">Desorden Visual</h2>
+        <p className="text-gray-400 dark:text-gray-500 font-bold text-sm max-w-xs mx-auto">Toca las burbujas para despejar tu mente. Haz espacio para la calma.</p>
       </div>
 
       <AnimatePresence>
