@@ -15,9 +15,7 @@ const App: React.FC = () => {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    // Cargamos el JSON de forma dinámica para evitar errores de resolución de módulos
-    // y permitir que el sitio sea escalable hacia una administración externa.
-    fetch('./data.json')
+    fetch('/data.json')
       .then((res) => {
         if (!res.ok) {
           throw new Error(`Error al cargar los datos: ${res.status} ${res.statusText}`);
