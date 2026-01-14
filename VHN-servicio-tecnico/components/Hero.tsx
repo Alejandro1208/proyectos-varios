@@ -25,9 +25,9 @@ const Hero: React.FC<HeroProps> = ({ name, slogan }) => {
           <div className="inline-block px-4 py-1.5 mb-6 rounded-full bg-blue-600/20 border border-blue-400/30 backdrop-blur-sm animate-fade-in">
             <span className="text-blue-400 font-bold tracking-widest text-xs uppercase">Servicio Técnico Especializado</span>
           </div>
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-black mb-6 tracking-tighter drop-shadow-2xl leading-tight">
-            {name}
-          </h1>
+          <div className="flex justify-center mb-6">
+            <img src="/logo.png" alt="VHN Servicio Técnico Gastronómico" className="h-64 md:h-80 w-auto" />
+          </div>
           <p className="text-lg md:text-2xl text-slate-200 mb-10 font-medium max-w-2xl mx-auto drop-shadow-md">
             {slogan}
           </p>
