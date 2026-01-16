@@ -20,11 +20,11 @@
       "title": "Máquinas de Hielo",
       "shortDescription": "Reparación técnica oficial de todas las marcas.",
       "fullDescription": "Especialistas en la reparación y mantenimiento de fabricadoras de hielo de alta gama. Trabajamos con marcas como BREMA, FREDO, SCOTSMAN, ICE OMATIC, TURBOBLENDER, BRUNETTI, HIELOGIC, MANITOWOC, DIAFANA y más. Solucionamos problemas de producción, limpieza de circuitos y fallas electrónicas.",
-      "image": "https://picsum.photos/id/431/800/600",
+      "image": "/images/fabricadoras-de-hielo-1.jpeg",
       "carouselImages": [
-        "https://picsum.photos/id/431/800/600",
-        "https://picsum.photos/id/160/800/600",
-        "https://picsum.photos/id/201/800/600"
+        "/images/fabricadoras-de-hielo-2.jpeg",
+        "/images/fabricadoras-de-hielo-3.jpeg",
+        "/images/fabricadoras-de-hielo-4.jpeg"
       ],
       "category": "Hielo"
     },
@@ -33,11 +33,11 @@
       "title": "Equipamiento de Frío",
       "shortDescription": "Heladeras, freezers y cámaras frigoríficas.",
       "fullDescription": "Mantenimiento preventivo y correctivo de heladeras exhibidoras, bajo mesada, verticales, freezers industriales, cámaras de media y baja temperatura, y abatidores de temperatura. Garantizamos la cadena de frío de sus productos.",
-      "image": "https://picsum.photos/id/192/800/600",
+      "image": "/images/heladeras-frio-1.jpeg",
       "carouselImages": [
-        "https://picsum.photos/id/192/800/600",
-        "https://picsum.photos/id/10/800/600",
-        "https://picsum.photos/id/20/800/600"
+        "/images/heladeras-frio-2.jpeg",
+        "/images/heladeras-frio-3.jpeg",
+        "/images/abatidores-1.jpeg"
       ],
       "category": "Frio"
     },
@@ -46,10 +46,10 @@
       "title": "Heladería Profesional",
       "shortDescription": "Fabricadoras y pasteurizadoras de helado.",
       "fullDescription": "Servicio técnico especializado en máquinas fabricadoras de helado artesanal y pasteurizadoras. Calibración de temperatura, revisión de motores y sellos para un funcionamiento óptimo.",
-      "image": "https://picsum.photos/id/493/800/600",
+      "image": "/images/pausterizadoras-fabricadoras-de-helado-1.jpeg",
       "carouselImages": [
-        "https://picsum.photos/id/493/800/600",
-        "https://picsum.photos/id/429/800/600"
+        "/images/pausterizadoras-fabricadoras-de-helado-2.jpeg",
+        "/images/pausterizadoras-fabricadoras-de-helado-3.jpeg"
       ],
       "category": "Frio"
     },
@@ -70,11 +70,9 @@
       "title": "Equipamiento de Calor",
       "shortDescription": "Hornos, freidoras y sistemas de cocción.",
       "fullDescription": "Reparación de hornos eléctricos y a gas, freidoras de alto rendimiento, tostadores industriales, humificadores y deshidratadores. Ajuste de quemadores y sistemas eléctricos de control.",
-      "image": "https://picsum.photos/id/488/800/600",
+      "image": "/images/freidoras-hornos-1.jpeg",
       "carouselImages": [
-        "https://picsum.photos/id/488/800/600",
-        "https://picsum.photos/id/491/800/600",
-        "https://picsum.photos/id/292/800/600"
+        "/images/freidoras-hornos-2.jpeg"
       ],
       "category": "Caliente"
     }

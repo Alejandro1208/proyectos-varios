@@ -65,7 +65,7 @@ const ServiceModal: React.FC<ServiceModalProps> = ({ service, onClose }) => {
                   <button
                     key={idx}
                     onClick={() => setCurrentImageIndex(idx)}
-                    className={`w-2.5 h-2.5 rounded-full transition-all ${idx === currentImageIndex ? 'bg-white w-6' : 'bg-white/50'}`}
+                    className={`w-2.5 h-2.5 rounded-full transition-all ring-1 ring-black/25 ${idx === currentImageIndex ? 'bg-white w-6' : 'bg-white/50'}`}
                   ></button>
                 ))}
               </div>
