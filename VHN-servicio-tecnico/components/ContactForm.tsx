@@ -130,7 +130,7 @@ const ContactForm: React.FC = () => {
                 <button
                   type="submit"
                   disabled={loading || success}
-                  className={`w-full px-10 py-6 rounded-2xl font-black text-lg transition-all duration-300 ease-in-out hover:scale-[1.02] shadow-xl disabled:opacity-70 flex items-center justify-center
+                  className={`w-full px-10 py-6 rounded-2xl font-black text-lg transition-all duration-300 ease-in-out hover:scale-[1.02] shadow-xl disabled:opacity-70 flex items-center justify-center text-white
                     ${success ? 'bg-green-500' : 'bg-slate-900 hover:bg-black'}
                   `}
                 >
