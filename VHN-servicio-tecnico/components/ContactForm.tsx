@@ -73,7 +73,7 @@ const ContactForm: React.FC = () => {
                 </div>
                 <div>
                   <p className="text-blue-200 text-xs font-black uppercase tracking-widest mb-1">Email</p>
-                  <p className="text-xl font-bold">info@VHNservice.com.ar</p>
+                  <p className="text-xl font-bold">info@vhnservice.com</p>
                 </div>
               </div>
 
