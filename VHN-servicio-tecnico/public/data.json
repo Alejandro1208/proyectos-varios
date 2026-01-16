@@ -58,10 +58,10 @@
       "title": "Aire Acondicionado",
       "shortDescription": "Sistemas split, centrales y roof-top.",
       "fullDescription": "Instalación, carga de gas y reparación de aires acondicionados split domésticos e industriales, sistemas centrales y equipos roof-top para grandes superficies gastronómicas.",
-      "image": "https://picsum.photos/id/445/800/600",
+      "image": "/images/aire-acondicionado-1.jpg",
       "carouselImages": [
-        "https://picsum.photos/id/445/800/600",
-        "https://picsum.photos/id/444/800/600"
+        "/images/aire-acondicionado-1.jpg",
+        "/images/aire-acondicionado-2.webp"
       ],
       "category": "AA"
     },
