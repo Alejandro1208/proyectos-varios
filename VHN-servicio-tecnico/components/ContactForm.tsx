@@ -7,11 +7,43 @@ const ContactForm: React.FC = () => {
     phone: '',
     message: '',
   });
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [success, setSuccess] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    alert('¡Mensaje enviado con éxito! Nos contactaremos pronto.');
-    setFormData({ name: '', phone: '', message: '' });
+    if (loading || success) return;
+
+    setLoading(true);
+    setError(null);
+    setSuccess(false);
+
+    try {
+      const response = await fetch('/api/send-email.php', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+
+      if (response.ok && result.status === 'success') {
+        setSuccess(true);
+        setFormData({ name: '', phone: '', message: '' });
+        setTimeout(() => {
+          setSuccess(false);
+        }, 2000);
+      } else {
+        setError(result.message || 'Hubo un error al enviar el mensaje.');
+      }
+    } catch (err) {
+      setError('No se pudo conectar con el servidor. Inténtalo de nuevo más tarde.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -41,7 +73,7 @@ const ContactForm: React.FC = () => {
                 </div>
                 <div>
                   <p className="text-blue-200 text-xs font-black uppercase tracking-widest mb-1">Email</p>
-                  <p className="text-xl font-bold">vhn@gastronomia.com</p>
+                  <p className="text-xl font-bold">info@VHNservice.com.ar</p>
                 </div>
               </div>
 
@@ -94,12 +126,27 @@ const ContactForm: React.FC = () => {
                   placeholder="Describa el problema o el equipo que necesita reparar..."
                 ></textarea>
               </div>
-              <button
-                type="submit"
-                className="w-full bg-slate-900 hover:bg-black text-white px-10 py-6 rounded-2xl font-black text-lg transition-all hover:scale-[1.02] shadow-xl"
-              >
-                Enviar Consulta <i className="fas fa-paper-plane ml-3"></i>
-              </button>
+              <div>
+                <button
+                  type="submit"
+                  disabled={loading || success}
+                  className={`w-full px-10 py-6 rounded-2xl font-black text-lg transition-all duration-300 ease-in-out hover:scale-[1.02] shadow-xl disabled:opacity-70 flex items-center justify-center
+                    ${success ? 'bg-green-500' : 'bg-slate-900 hover:bg-black'}
+                  `}
+                >
+                  {loading ? (
+                    'Enviando...'
+                  ) : success ? (
+                    <i className="fas fa-check text-2xl"></i>
+                  ) : (
+                    <>
+                      Enviar Consulta
+                      <i className="fas fa-paper-plane ml-3"></i>
+                    </>
+                  )}
+                </button>
+                {error && <p className="text-red-600 mt-4 font-bold">{error}</p>}
+              </div>
             </form>
           </div>
         </div>
