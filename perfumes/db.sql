@@ -5,7 +5,7 @@ CREATE TABLE IF NOT EXISTS products (
   name VARCHAR(255) NOT NULL,
   brand VARCHAR(255) NOT NULL,
   price DECIMAL(12,2) NOT NULL DEFAULT 0,
-  category ENUM('hombre','mujer','unisex') NOT NULL DEFAULT 'hombre',
+  category ENUM('hombre','mujer','unisex','de diseñador') NOT NULL DEFAULT 'hombre',
   image VARCHAR(255) NOT NULL,
   description TEXT NOT NULL,
   stock INT NOT NULL DEFAULT 0,

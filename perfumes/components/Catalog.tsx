@@ -75,7 +75,7 @@ const Catalog: React.FC<Props> = ({ phone, products }) => {
 
           <div className="flex flex-col md:flex-row items-stretch md:items-center gap-4 w-full lg:w-auto">
             <div className="flex bg-[#0E0F26] p-1 rounded-full shadow-lg shadow-black/10">
-              {(['todos', 'hombre', 'mujer', 'unisex'] as Category[]).map((cat) => (
+              {(['todos', 'hombre', 'mujer', 'unisex', 'de diseñador'] as Category[]).map((cat) => (
                 <button
                   key={cat}
                   onClick={() => setActiveCategory(cat)}

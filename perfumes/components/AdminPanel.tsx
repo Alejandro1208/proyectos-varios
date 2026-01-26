@@ -614,6 +614,7 @@ const AdminPanel: React.FC<Props> = ({ onLogout, phone, onPhoneChange, products,
                     <option value="hombre">Hombre</option>
                     <option value="mujer">Mujer</option>
                     <option value="unisex">Unisex</option>
+                    <option value="de diseñador">De diseñador</option>
                   </select>
                 </div>
                 <div className="space-y-2">

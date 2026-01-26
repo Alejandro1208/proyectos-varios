@@ -1,5 +1,5 @@
 
-export type Category = 'todos' | 'hombre' | 'mujer' | 'unisex';
+export type Category = 'todos' | 'hombre' | 'mujer' | 'unisex' | 'de diseñador';
 
 export interface Product {
   id: number;
