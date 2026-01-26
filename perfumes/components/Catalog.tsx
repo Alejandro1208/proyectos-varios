@@ -74,12 +74,12 @@ const Catalog: React.FC<Props> = ({ phone, products }) => {
           <h2 className="text-4xl font-bold tracking-tight text-[#0E0F26]">Nuestros Productos</h2>
 
           <div className="flex flex-col md:flex-row items-stretch md:items-center gap-4 w-full lg:w-auto">
-            <div className="flex bg-[#0E0F26] p-1 rounded-full shadow-lg shadow-black/10">
+            <div className="flex flex-wrap gap-2 bg-[#0E0F26] p-4 rounded-3xl shadow-lg shadow-black/10">
               {(['todos', 'hombre', 'mujer', 'unisex', 'de diseñador'] as Category[]).map((cat) => (
                 <button
                   key={cat}
                   onClick={() => setActiveCategory(cat)}
-                  className={`px-6 py-2 rounded-full text-sm font-semibold transition-all ${
+                  className={`px-4 py-2 rounded-full text-sm font-semibold transition-all ${
                     activeCategory === cat
                       ? 'bg-[#BF926B] text-[#0D0D0D] shadow-md'
                       : 'text-[#F2F2F2] opacity-80 hover:opacity-100'
