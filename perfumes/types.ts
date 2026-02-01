@@ -37,3 +37,27 @@ export interface Config {
   email?: string;
   address?: string;
 }
+
+export interface Prize {
+  id: number;
+  name: string;
+  value: string;
+  chance: number;
+  background_color: string;
+  text_color: string;
+}
+
+export interface LuckyWheelData {
+  settings: {
+    spins_per_user: string;
+    duration_hours: string;
+    is_active: string;
+  };
+  prizes: Prize[];
+}
+
+export interface PromoCode {
+  code: string;
+  discount_percentage: number;
+  is_active: boolean;
+}

@@ -6,9 +6,10 @@ import { Category, Product } from '../types';
 interface Props {
   phone: string;
   products: Product[];
+  discount: { value: string, prizeName: string } | null;
 }
 
-const Catalog: React.FC<Props> = ({ phone, products }) => {
+const Catalog: React.FC<Props> = ({ phone, products, discount }) => {
   const [activeCategory, setActiveCategory] = useState<Category>('todos');
   const [perPage, setPerPage] = useState(12);
   const [page, setPage] = useState(1);
@@ -54,6 +55,13 @@ const Catalog: React.FC<Props> = ({ phone, products }) => {
     setPage(1);
   }, [activeCategory, perPage, searchTerm]);
 
+  const applyDiscount = (price: number) => {
+    if (!discount) return price;
+    if (discount.value === 'free_shipping') return price;
+    const discountValue = parseInt(discount.value, 10);
+    return price - (price * discountValue / 100);
+  }
+
   const formatPrice = (price: number) => {
     return new Intl.NumberFormat('es-AR', {
       style: 'currency',
@@ -63,8 +71,17 @@ const Catalog: React.FC<Props> = ({ phone, products }) => {
   };
 
   const handleBuy = (product: Product) => {
-    const message = encodeURIComponent(`Hola! Me interesa el perfume ${product.name}, ¿sigue disponible?`);
-    window.open(`https://wa.me/${phone}?text=${message}`, '_blank');
+    let message = `Hola! Me interesa el perfume ${product.name}`;
+    if(discount) {
+      if (discount.value === 'free_shipping') {
+        message += `, y gané un envío gratis!`;
+      } else {
+        message += `, y gané un ${discount.prizeName} de descuento!`;
+      }
+    }
+    message += ' ¿Sigue disponible?';
+    const encodedMessage = encodeURIComponent(message);
+    window.open(`https://wa.me/${phone}?text=${encodedMessage}`, '_blank');
   };
 
   return (
@@ -126,7 +143,19 @@ const Catalog: React.FC<Props> = ({ phone, products }) => {
                   <p className={`text-sm font-semibold mt-2 ${product.stock > 0 ? 'text-[#BF926B]' : 'text-[#8C8C8C]'}`}>
                     {product.stock > 0 ? 'En stock' : 'Sin stock - Reservar'}
                   </p>
-                  <p className="text-2xl font-bold text-[#0E0F26] mt-3">{formatPrice(product.price)}</p>
+                  {discount && discount.value !== 'free_shipping' && discount.value !== '0' ? (
+                    <div className='flex items-center gap-x-2'>
+                        <p className="text-2xl font-bold text-[#0E0F26] mt-3">{formatPrice(applyDiscount(product.price))}</p>
+                        <p className="text-lg font-bold text-red-500 mt-3 line-through">{formatPrice(product.price)}</p>
+                    </div>
+                  ) : (
+                    <div className="mt-3">
+                      <p className="text-2xl font-bold text-[#0E0F26]">{formatPrice(product.price)}</p>
+                      {discount && discount.value === 'free_shipping' && (
+                        <span className="text-green-600 text-sm font-bold bg-green-100 px-2 py-1 rounded inline-block mt-1">Envío gratis</span>
+                      )}
+                    </div>
+                  )}
                 </div>
                 <button 
                   onClick={() => handleBuy(product)}

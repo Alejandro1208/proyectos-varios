@@ -1,5 +1,3 @@
-
-
 CREATE TABLE IF NOT EXISTS products (
   id INT UNSIGNED NOT NULL AUTO_INCREMENT,
   name VARCHAR(255) NOT NULL,
@@ -86,3 +84,56 @@ ON DUPLICATE KEY UPDATE title=VALUES(title), description=VALUES(description), vi
 -- Productos destacados flag
 ALTER TABLE products ADD COLUMN IF NOT EXISTS featured TINYINT(1) NOT NULL DEFAULT 0;
 ALTER TABLE products ADD COLUMN IF NOT EXISTS sort_order INT NOT NULL DEFAULT 0;
+
+/*
+-- Lucky wheel
+CREATE TABLE IF NOT EXISTS lucky_wheel_settings (
+  id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `key` VARCHAR(100) NOT NULL UNIQUE,
+  `value` TEXT NOT NULL,
+  PRIMARY KEY (id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+INSERT INTO lucky_wheel_settings (`key`, `value`) VALUES
+('spins_per_user', '1'),
+('duration_hours', '168'),
+('is_active', '1')
+ON DUPLICATE KEY UPDATE `value` = VALUES(`value`);
+
+CREATE TABLE IF NOT EXISTS lucky_wheel_prizes (
+  id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  name VARCHAR(255) NOT NULL,
+  value VARCHAR(255) NOT NULL,
+  chance DECIMAL(5,2) NOT NULL DEFAULT 0,
+  background_color VARCHAR(50) NOT NULL DEFAULT '#FFFFFF',
+  text_color VARCHAR(50) NOT NULL DEFAULT '#000000',
+  PRIMARY KEY (id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+INSERT INTO lucky_wheel_prizes (name, value, chance, background_color, text_color) VALUES
+('10% OFF', '10', 10, '#FFC107', '#000000'),
+('Envío gratis', 'free_shipping', 5, '#4CAF50', '#FFFFFF'),
+('20% OFF', '20', 5, '#F44336', '#FFFFFF'),
+('5% OFF', '5', 20, '#2196F3', '#FFFFFF'),
+('30% OFF', '30', 2, '#9C27B0', '#FFFFFF'),
+('15% OFF', '15', 10, '#FF9800', '#000000'),
+('25% OFF', '25', 3, '#E91E63', '#FFFFFF'),
+('Sin premio', '0', 45, '#9E9E9E', '#FFFFFF');
+
+CREATE TABLE IF NOT EXISTS user_spins (
+  id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  user_id VARCHAR(255) NOT NULL,
+  spin_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+*/
+
+CREATE TABLE IF NOT EXISTS promo_codes (
+  id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  code VARCHAR(50) NOT NULL,
+  discount_percentage INT NOT NULL DEFAULT 0,
+  is_active TINYINT(1) NOT NULL DEFAULT 0,
+  PRIMARY KEY (id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+INSERT INTO promo_codes (code, discount_percentage, is_active) VALUES ('NACHO10', 10, 1);

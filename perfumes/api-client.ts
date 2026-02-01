@@ -1,4 +1,4 @@
-import { Product, HeroContent, HowToBuy } from './types';
+import { Product, HeroContent, HowToBuy, LuckyWheelData, PromoCode } from './types';
 
 const BASE_URL = '/api';
 
@@ -86,5 +86,31 @@ export async function saveHowToBuy(data: HowToBuy) {
   });
   const res = await fetch(`${BASE_URL}/how_to_buy.php`, { method: 'POST', body });
   if (!res.ok) throw new Error('Error al guardar sección Cómo comprar');
+  return res.json();
+}
+
+/*
+export async function fetchLuckyWheel(): Promise<LuckyWheelData> {
+  const res = await fetch(`${BASE_URL}/lucky-wheel.php`);
+  if (!res.ok) throw new Error('Error al cargar la rueda de la fortuna');
+  return res.json();
+}
+
+export async function saveLuckyWheel(data: LuckyWheelData) {
+  const res = await fetch(`${BASE_URL}/lucky-wheel.php`, { method: 'POST', body: JSON.stringify(data) });
+  if (!res.ok) throw new Error('Error al guardar la rueda de la fortuna');
+  return res.json();
+}
+*/
+
+export async function fetchPromoCode(): Promise<PromoCode> {
+  const res = await fetch(`${BASE_URL}/promo-code.php`);
+  if (!res.ok) throw new Error('Error al cargar código promocional');
+  return res.json();
+}
+
+export async function savePromoCode(data: PromoCode) {
+  const res = await fetch(`${BASE_URL}/promo-code.php`, { method: 'POST', body: JSON.stringify(data) });
+  if (!res.ok) throw new Error('Error al guardar código promocional');
   return res.json();
 }

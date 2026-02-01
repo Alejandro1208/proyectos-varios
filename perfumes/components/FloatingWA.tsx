@@ -4,11 +4,21 @@ import { MessageCircle } from 'lucide-react';
 
 interface Props {
   phone: string;
+  discount: { value: string, prizeName: string } | null;
 }
 
-const FloatingWA: React.FC<Props> = ({ phone }) => {
+const FloatingWA: React.FC<Props> = ({ phone, discount }) => {
   const handleClick = () => {
-    window.open(`https://wa.me/${phone}`, '_blank');
+    let message = 'Hola! ';
+    if (discount) {
+      if (discount.value === 'free_shipping') {
+        message += `Gané un envío gratis!`;
+      } else {
+        message += `Gané un ${discount.prizeName} de descuento!`;
+      }
+    }
+    const encodedMessage = encodeURIComponent(message);
+    window.open(`https://wa.me/${phone}?text=${encodedMessage}`, '_blank');
   };
 
   return (

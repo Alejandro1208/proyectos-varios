@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "name": "Odyssey Candee (Special Edition)",
+        "brand": "Armaf",
+        "price": 85000,
+        "category": "hombre",
+        "image": "images/products/perfume-1.jpeg",
+        "description": "Perfume dulce, para mujer, mejor repercusion en invierno, duracion de 8 horas aprox",
+        "stock": 8,
+        "featured": true,
+        "sort_order": 1
+    },
+    {
+        "id": 2,
+        "name": "Club de Nuit Woman",
+        "brand": "Armaf",
+        "price": 72000,
+        "category": "hombre",
+        "image": "images/products/perfume-2.jpeg",
+        "description": "Perfume de mujer, citrico, mejor para el verano o primavera, duracion aproximada de 6 horas",
+        "stock": 0,
+        "featured": true,
+        "sort_order": 2
+    },
+    {
+        "id": 3,
+        "name": "Odyssey Mandarin Sky",
+        "brand": "Armaf",
+        "price": 78000,
+        "category": "mujer",
+        "image": "images/products/perfume-3.jpeg",
+        "description": "Perfume unisex, mas hombre que mujer, citrico dulce para invierno con una duracion de mas de 6 horas",
+        "stock": 3,
+        "featured": false,
+        "sort_order": 3
+    }
+]

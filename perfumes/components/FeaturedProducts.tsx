@@ -5,9 +5,10 @@ import { MessageCircle } from 'lucide-react';
 interface Props {
   products: Product[];
   phone: string;
+  discount: { value: string, prizeName: string } | null;
 }
 
-const FeaturedProducts: React.FC<Props> = ({ products, phone }) => {
+const FeaturedProducts: React.FC<Props> = ({ products, phone, discount }) => {
   const featured = products.filter((p) => p.featured);
   const sliderRef = useRef<HTMLDivElement>(null);
 
@@ -23,10 +24,34 @@ const FeaturedProducts: React.FC<Props> = ({ products, phone }) => {
     return () => clearInterval(interval);
   }, [featured.length]);
 
+  const applyDiscount = (price: number) => {
+    if (!discount) return price;
+    if (discount.value === 'free_shipping') return price;
+    const discountValue = parseInt(discount.value, 10);
+    return price - (price * discountValue / 100);
+  }
+
+  const formatPrice = (price: number) => {
+    return new Intl.NumberFormat('es-AR', {
+      style: 'currency',
+      currency: 'ARS',
+      maximumFractionDigits: 0
+    }).format(price);
+  };
+
   const handleBuy = (product: Product) => {
     if (!phone) return;
-    const message = encodeURIComponent(`Hola! Me interesa el perfume ${product.name}, ¿sigue disponible?`);
-    window.open(`https://wa.me/${phone}?text=${message}`, '_blank');
+    let message = `Hola! Me interesa el perfume ${product.name}`;
+    if(discount) {
+      if (discount.value === 'free_shipping') {
+        message += `, y gané un envío gratis!`;
+      } else {
+        message += `, y gané un ${discount.prizeName} de descuento!`;
+      }
+    }
+    message += ' ¿Sigue disponible?';
+    const encodedMessage = encodeURIComponent(message);
+    window.open(`https://wa.me/${phone}?text=${encodedMessage}`, '_blank');
   };
 
   if (featured.length === 0) return null;
@@ -50,7 +75,19 @@ const FeaturedProducts: React.FC<Props> = ({ products, phone }) => {
               <p className="text-[11px] font-semibold text-[#8C8C8C] uppercase tracking-widest">Marca: {p.brand}</p>
               <h3 className="text-base font-bold text-[#0D0D0D] line-clamp-2">{p.name}</h3>
               <p className="text-sm text-[#8C8C8C] mt-1 line-clamp-2">{p.description}</p>
-              <p className="text-lg font-bold text-[#0E0F26] mt-2">${p.price.toLocaleString()}</p>
+              {discount && discount.value !== 'free_shipping' && discount.value !== '0' ? (
+                <div className='flex items-center gap-x-2'>
+                    <p className="text-lg font-bold text-[#0E0F26] mt-2">{formatPrice(applyDiscount(p.price))}</p>
+                    <p className="text-sm font-bold text-red-500 mt-2 line-through">{formatPrice(p.price)}</p>
+                </div>
+              ) : (
+                <div className="mt-2">
+                  <p className="text-lg font-bold text-[#0E0F26]">${p.price.toLocaleString()}</p>
+                  {discount && discount.value === 'free_shipping' && (
+                    <span className="text-green-600 text-xs font-bold bg-green-100 px-2 py-0.5 rounded inline-block">Envío gratis</span>
+                  )}
+                </div>
+              )}
               <span className={`inline-block mt-2 text-xs font-bold px-3 py-1 rounded-full ${p.stock > 0 ? 'bg-[#BF926B] text-[#0D0D0D]' : 'bg-[#8C8C8C] text-[#F2F2F2]'}`}>
                 {p.stock > 0 ? `${p.stock} u.` : 'Sin stock'}
               </span>
