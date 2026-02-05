@@ -1,0 +1,79 @@
+
+{
+  "brand": {
+    "name": "CUIDAR BUENOS AIRES",
+    "tagline": "Cuidados Domiciliarios",
+    "whatsappLink": "https://wa.me/5491100000000?text=Hola!%20Me%20gustaría%20recibir%20más%20información%20sobre%20sus%20servicios%20de%20cuidado."
+  },
+  "navigation": [
+    { "label": "Inicio", "href": "#inicio" },
+    { "label": "La Empresa", "href": "#empresa" },
+    { "label": "Servicios", "href": "#servicios" },
+    { "label": "Nuestro Equipo", "href": "#equipo" },
+    { "label": "Proceso", "href": "#proceso" }
+  ],
+  "hero": {
+    "title": "Compromiso, Responsabilidad y Calidez Humana",
+    "subtitle": "Cuidamos a quienes más quieres con el profesionalismo que tu familia merece.",
+    "cta": "Más info",
+    "backgroundImage": "https://images.unsplash.com/photo-1581578731548-c64695cc6958?auto=format&fit=crop&q=80&w=2000"
+  },
+  "about": {
+    "title": "La Empresa",
+    "text": "Somos una empresa familiar dedicada al cuidado y acompañamiento de adultos mayores y pacientes que necesitan asistencia en su hogar. En Cuidar Buenos Aires, entendemos que cada paciente es único, por lo que brindamos una atención personalizada que garantiza el bienestar físico y emocional.",
+    "image": "https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?auto=format&fit=crop&q=80&w=800",
+    "trustPoints": [
+      "Empresa debidamente registrada.",
+      "Seguro de responsabilidad civil y accidentes personales.",
+      "Personal con antecedentes penales al día.",
+      "Experiencia comprobable en el rubro."
+    ]
+  },
+  "team": {
+    "title": "Nuestro equipo de cuidadoras",
+    "description": "Profesionales capacitadas bajo estrictos protocolos de seguridad e higiene.",
+    "items": [
+      {
+        "title": "Protocolo de Higiene",
+        "description": "Uso de ambo (colocado en el domicilio), lavado de manos riguroso, alcohol en gel y barbijo."
+      },
+      {
+        "title": "Atención Humana",
+        "description": "Trato responsable, respetuoso y cálido, priorizando el vínculo con el paciente."
+      },
+      {
+        "title": "Acompañamiento",
+        "description": "Brindamos contención emocional y compañía para generar bienestar integral."
+      }
+    ]
+  },
+  "services": {
+    "title": "Asistencia Integral",
+    "items": [
+      { "title": "Higiene y confort del paciente", "icon": "Waves" },
+      { "title": "Asistencia para movilidad y alimentación", "icon": "Accessibility" },
+      { "title": "Preparación de comidas", "icon": "Utensils" },
+      { "title": "Limpieza básica del entorno", "icon": "Sparkles" },
+      { "title": "Administración de medicación", "icon": "Pill" },
+      { "title": "Toma de signos vitales diaria", "icon": "Activity" }
+    ],
+    "disclaimer": "No se realiza limpieza profunda ni tareas de limpieza general del domicilio."
+  },
+  "process": {
+    "title": "¿Cómo trabajamos?",
+    "steps": [
+      {
+        "title": "Entrevista",
+        "description": "Coordinamos una entrevista presencial para conocer las necesidades específicas."
+      },
+      {
+        "title": "Contrato",
+        "description": "Se firma el contrato correspondiente, brindando seguridad y tranquilidad legal a la familia."
+      },
+      {
+        "title": "Pago y Comienzo",
+        "description": "El servicio se abona de manera anticipada al momento de la firma para garantizar la cobertura inmediata."
+      }
+    ]
+  }
+}

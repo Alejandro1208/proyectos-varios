@@ -1,0 +1,62 @@
+
+{
+  "companyName": "INSUMAQ",
+  "whatsappNumber": "5491112345678",
+  "whatsappMessage": "Hola! Me gustaría obtener más información sobre sus servicios de reparación y repuestos.",
+  "navItems": [
+    { "label": "Inicio", "href": "#inicio" },
+    { "label": "Nosotros", "href": "#nosotros" },
+    { "label": "Servicios", "href": "#servicios" },
+    { "label": "Repuestos", "href": "#repuestos" },
+    { "label": "Contacto", "href": "#contacto" }
+  ],
+  "hero": {
+    "title": "Soluciones Integrales en Maquinaria",
+    "subtitle": "Especialistas en mantenimiento correctivo, preventivo y venta de repuestos originales para que su potencia nunca se detenga.",
+    "ctaText": "Ver Servicios",
+    "backgroundImage": "/banner.jpg"
+  },
+  "about": {
+    "title": "Liderazgo en el Sector de Maquinaria",
+    "subtitle": "Sobre INSUMAQ",
+    "description": "En INSUMAQ nos dedicamos a maximizar la vida útil de sus equipos pesados. Con una trayectoria consolidada, combinamos ingeniería de precisión con los mejores repuestos del mercado. Nuestro compromiso es la eficiencia operativa de su flota.",
+    "image": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=2070"
+  },
+  "services": [
+    {
+      "id": "hidraulica",
+      "title": "Ingeniería Hidráulica",
+      "description": "Reparación y mantenimiento de sistemas hidráulicos de alta presión con garantía de fábrica.",
+      "icon": "fa-gears"
+    },
+    {
+      "id": "electrica",
+      "title": "Sistemas Eléctricos",
+      "description": "Diagnóstico computarizado y reparación de módulos de control y sensores especializados.",
+      "icon": "fa-bolt"
+    },
+    {
+      "id": "motores",
+      "title": "Overhaul de Motores",
+      "description": "Reconstrucción total de motores diesel para equipos de minería, construcción y agro.",
+      "icon": "fa-screwdriver-wrench"
+    }
+  ],
+  "spareParts": {
+    "title": "Repuestos Certificados",
+    "description": "Amplio stock de componentes críticos para marcas líderes. Aseguramos la compatibilidad y durabilidad que su maquinaria exige.",
+    "categories": [
+      "Bombas y Motores Hidráulicos",
+      "Kits de Filtros Originales",
+      "Tren de Rodaje y Transmisión",
+      "Elementos de Desgaste (Cuchillas/Puntas)"
+    ],
+    "image": "https://images.unsplash.com/photo-1537462715879-360eeb61a0ad?auto=format&fit=crop&q=80&w=2070"
+  },
+  "contact": {
+    "email": "ventas@insumaq.com",
+    "phone": "+54 11 1234 5678",
+    "address": "Av. Industrial 4500, Sector Logístico, Argentina",
+    "hours": "Lunes a Viernes de 08:00 a 18:00 hs"
+  }
+}
