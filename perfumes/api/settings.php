@@ -5,21 +5,27 @@ $method = method_override();
 
 try {
     if ($method === 'GET') {
-        $stmt = $pdo->prepare('SELECT `value` FROM settings WHERE `key` = ?');
-        $stmt->execute(['phone']);
-        $row = $stmt->fetch();
-        $value = $row ? $row['value'] : '';
-        json_response(['phone' => $value]);
+        // Devolver todas las configuraciones como un objeto JSON
+        $stmt = $pdo->query('SELECT `key`, `value` FROM settings');
+        $settings = $stmt->fetchAll(PDO::FETCH_KEY_PAIR);
+        json_response($settings);
     }
 
     if ($method === 'POST' || $method === 'PUT') {
-        $phone = trim($_POST['phone'] ?? '');
-        if ($phone === '') {
-            json_response(['error' => 'Teléfono requerido'], 400);
+        // Manejar actualización genérica o específica del teléfono
+        if (isset($_POST['key']) && isset($_POST['value'])) {
+            $key = $_POST['key'];
+            $value = $_POST['value'];
+        } elseif (isset($_POST['phone'])) {
+            $key = 'phone';
+            $value = $_POST['phone'];
+        } else {
+            json_response(['error' => 'Datos faltantes'], 400);
         }
+
         $stmt = $pdo->prepare('INSERT INTO settings (`key`, `value`) VALUES (?, ?) ON DUPLICATE KEY UPDATE `value` = VALUES(`value`)');
-        $stmt->execute(['phone', $phone]);
-        json_response(['message' => 'Teléfono actualizado', 'phone' => $phone]);
+        $stmt->execute([$key, $value]);
+        json_response(['message' => 'Configuración actualizada']);
     }
 
     json_response(['error' => 'Método no permitido'], 405);

@@ -30,6 +30,7 @@ const AdminPanel: React.FC<Props> = ({ onLogout, phone, onPhoneChange, products,
   const [heroFile, setHeroFile] = useState<File | null>(null);
   // const [luckyWheelData, setLuckyWheelData] = useState<LuckyWheelData | null>(staticLuckyWheel);
   const [promoData, setPromoData] = useState<PromoCode>(staticPromoCode);
+  const [categorySettings, setCategorySettings] = useState<Record<string, boolean>>({});
 
   const emptyForm: Product = useMemo(() => ({
     id: Date.now(),
@@ -89,6 +90,20 @@ const AdminPanel: React.FC<Props> = ({ onLogout, phone, onPhoneChange, products,
         setPhoneInput(ph || CONFIG.phone);
         // setLuckyWheelData(wheelData || staticLuckyWheel);
         setPromoData(promo || staticPromoCode);
+
+        // Cargar estado de categorías
+        try {
+          const res = await fetch('/api/settings.php');
+          if (res.ok) {
+            const data = await res.json();
+            setCategorySettings({
+              paused_hombre: data.paused_hombre === '1',
+              paused_mujer: data.paused_mujer === '1',
+              paused_unisex: data.paused_unisex === '1',
+              paused_de_diseñador: data.paused_de_diseñador === '1',
+            });
+          }
+        } catch (e) { console.warn("Error cargando settings de categorías", e); }
       } catch (err) {
         console.error('No se pudieron cargar datos de admin', err);
       }
@@ -188,6 +203,22 @@ const AdminPanel: React.FC<Props> = ({ onLogout, phone, onPhoneChange, products,
       setNotice('No se pudo guardar el teléfono');
     } finally {
       setSavingPhone(false);
+    }
+  };
+
+  const handleToggleCategory = async (category: string, paused: boolean) => {
+    const key = `paused_${category.replace(' ', '_')}`;
+    const value = paused ? '1' : '0';
+    
+    setCategorySettings(prev => ({ ...prev, [key]: paused }));
+
+    try {
+      const body = new URLSearchParams({ key, value });
+      await fetch('/api/settings.php', { method: 'POST', body });
+      setNotice(`Categoría ${paused ? 'pausada' : 'activada'}`);
+    } catch (err) {
+      console.error('Error guardando estado de categoría', err);
+      setNotice('Error al guardar configuración');
     }
   };
 
@@ -311,6 +342,7 @@ const AdminPanel: React.FC<Props> = ({ onLogout, phone, onPhoneChange, products,
               { key: 'contacto', label: 'Contacto' },
               // { key: 'rueda', label: 'Rueda de la Fortuna' },
               { key: 'promo', label: 'Código Promo' },
+              { key: 'categorias', label: 'Categorías' },
             ].map((tab) => (
               <button
                 key={tab.key}
@@ -612,6 +644,34 @@ const AdminPanel: React.FC<Props> = ({ onLogout, phone, onPhoneChange, products,
               >
                 {savingPhone ? 'Guardando...' : 'Guardar teléfono'}
               </button>
+            </div>
+          </div>
+        )}
+
+        {activeTab === 'categorias' && (
+          <div className="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 mb-8">
+            <h3 className="text-lg font-bold mb-4 text-[#0E0F26]">Gestionar visibilidad de categorías</h3>
+            <p className="text-slate-500 mb-6 text-sm">Si pausas una categoría, los clientes verán un mensaje de "Estamos agregando perfumes" en lugar de los productos.</p>
+            <div className="grid gap-4 max-w-2xl">
+              {['hombre', 'mujer', 'unisex', 'de diseñador'].map((cat) => {
+                const key = `paused_${cat.replace(' ', '_')}`;
+                return (
+                  <div key={cat} className="flex items-center justify-between p-4 bg-slate-50 rounded-xl border border-slate-100">
+                    <span className="font-bold capitalize text-slate-700">{cat}</span>
+                    <label className="flex items-center gap-3 cursor-pointer select-none">
+                      <span className={`text-sm font-semibold ${categorySettings[key] ? 'text-amber-600' : 'text-green-600'}`}>
+                        {categorySettings[key] ? 'Pausado' : 'Activo'}
+                      </span>
+                      <input 
+                        type="checkbox" 
+                        className="accent-black w-5 h-5"
+                        checked={!!categorySettings[key]} 
+                        onChange={(e) => handleToggleCategory(cat, e.target.checked)}
+                      />
+                    </label>
+                  </div>
+                );
+              })}
             </div>
           </div>
         )}

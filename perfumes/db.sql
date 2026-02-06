@@ -55,6 +55,14 @@ INSERT INTO products (name, brand, price, category, image, description, stock, f
 INSERT INTO settings (`key`, `value`) VALUES ('phone', '1162450386')
 ON DUPLICATE KEY UPDATE `value` = VALUES(`value`);
 
+-- Configuración para pausar categorías (0 = activo, 1 = pausado)
+INSERT INTO settings (`key`, `value`) VALUES 
+('paused_hombre', '0'),
+('paused_mujer', '0'),
+('paused_unisex', '0'),
+('paused_de_diseñador', '0')
+ON DUPLICATE KEY UPDATE `value` = VALUES(`value`);
+
 -- Hero content editable
 CREATE TABLE IF NOT EXISTS hero_content (
   id INT UNSIGNED NOT NULL AUTO_INCREMENT,

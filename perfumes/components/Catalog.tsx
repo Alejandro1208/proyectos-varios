@@ -7,9 +7,10 @@ interface Props {
   phone: string;
   products: Product[];
   discount: { value: string, prizeName: string } | null;
+  categorySettings: Record<string, boolean>;
 }
 
-const Catalog: React.FC<Props> = ({ phone, products, discount }) => {
+const Catalog: React.FC<Props> = ({ phone, products, discount, categorySettings }) => {
   const [activeCategory, setActiveCategory] = useState<Category>('todos');
   const [perPage, setPerPage] = useState(12);
   const [page, setPage] = useState(1);
@@ -84,6 +85,9 @@ const Catalog: React.FC<Props> = ({ phone, products, discount }) => {
     window.open(`https://wa.me/${phone}?text=${encodedMessage}`, '_blank');
   };
 
+  // Verificar si la categoría actual está pausada
+  const isPaused = activeCategory !== 'todos' && categorySettings[`paused_${activeCategory.replace(' ', '_')}`];
+
   return (
     <section id="catalogo" className="py-24 bg-[#F2F2F2] scroll-mt-navbar">
       <div className="container mx-auto px-6 md:px-12">
@@ -120,7 +124,12 @@ const Catalog: React.FC<Props> = ({ phone, products, discount }) => {
           </div>
         </div>
 
-        {paginated.length === 0 ? (
+        {isPaused ? (
+          <div className="bg-white border border-[#8C8C8C]/20 rounded-2xl p-16 text-center shadow-sm">
+            <h3 className="text-3xl font-bold text-[#0E0F26] mb-3">Estamos agregando perfumes</h3>
+            <p className="text-slate-500 text-lg">Muy pronto vas a ver las novedades que tenemos para vos en esta sección.</p>
+          </div>
+        ) : paginated.length === 0 ? (
           <div className="bg-white border border-[#8C8C8C]/20 rounded-2xl p-8 text-center shadow-sm">
             <p className="text-lg font-semibold text-[#0E0F26]">No encontramos productos</p>
             <p className="text-sm text-[#8C8C8C] mt-2">Probá ajustando la búsqueda o cambiando la categoría.</p>
@@ -173,7 +182,7 @@ const Catalog: React.FC<Props> = ({ phone, products, discount }) => {
           </div>
         )}
 
-        {totalPages > 1 && (
+        {!isPaused && totalPages > 1 && (
           <div className="flex justify-center items-center gap-3 mt-10">
             <button
               onClick={() => setPage((p) => Math.max(1, p - 1))}

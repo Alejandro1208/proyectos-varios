@@ -29,6 +29,7 @@ const App: React.FC = () => {
   const [showPromoModal, setShowPromoModal] = useState(false);
   const [promoCodeSettings, setPromoCodeSettings] = useState<PromoCode>(staticPromoCode);
   const [offerExpiresAt, setOfferExpiresAt] = useState<number | null>(null);
+  const [categorySettings, setCategorySettings] = useState<Record<string, boolean>>({});
 
   /*
   useEffect(() => {
@@ -78,6 +79,20 @@ const App: React.FC = () => {
         setHowToBuy(htb || HOW_TO_BUY);
         setPromoCodeSettings(promo || staticPromoCode);
         setProducts(prods || staticProducts);
+
+        // Cargar settings de categorías
+        try {
+          const res = await fetch('/api/settings.php');
+          if (res.ok) {
+            const data = await res.json();
+            setCategorySettings({
+              paused_hombre: data.paused_hombre === '1',
+              paused_mujer: data.paused_mujer === '1',
+              paused_unisex: data.paused_unisex === '1',
+              paused_de_diseñador: data.paused_de_diseñador === '1',
+            });
+          }
+        } catch (e) { console.warn("Error cargando settings de categorías", e); }
       } catch (err) {
         console.warn('Usando datos locales por error al cargar API', err);
         setHeroContent(HERO_CONTENT);
@@ -134,7 +149,7 @@ const App: React.FC = () => {
           )}
           {howToBuy && <HowToBuySection data={howToBuy} />}
           <FeaturedProducts products={products} phone={phone} discount={discount} />
-          <Catalog phone={phone} products={products} discount={discount} />
+          <Catalog phone={phone} products={products} discount={discount} categorySettings={categorySettings} />
           <Footer onAdminClick={() => setView('login')} phone={phone} />
         </>
       )}
