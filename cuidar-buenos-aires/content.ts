@@ -3,9 +3,9 @@ export const content = {
   "brand": {
     "name": "CUIDAR BUENOS AIRES",
     "tagline": "Cuidados Domiciliarios Profesionales",
-    "whatsappLink": "https://wa.me/5491169552893?text=Hola!%20Me%20gustaría%20recibir%20más%20información%20sobre%20sus%20servicios%20de%20cuidado.",
+    "whatsappLink": "https://wa.me/5491170594678?text=Hola!%20Me%20gustaría%20recibir%20más%20información%20sobre%20sus%20servicios%20de%20cuidado.",
     "workWithUsLink": "mailto:rrhh@cuidarbuenosaires.com?subject=Trabaja%20con%20nosotros",
-    "budgetLink": "https://wa.me/5491169552893?text=Hola!%20Quisiera%20solicitar%20un%20presupuesto."
+    "budgetLink": "mailto:facturacion.cuidarbuenosaires@gmail.com?subject=Solicitud%20de%20presupuesto"
   },
   "navigation": [
     { "label": "Inicio", "href": "#inicio" },
