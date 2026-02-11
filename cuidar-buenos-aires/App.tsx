@@ -386,7 +386,10 @@ const Testimonials: React.FC = () => {
             <div key={i} className="bg-slate-50 p-8 rounded-3xl relative">
               <Quote className="text-blue-200 absolute top-6 right-6" size={40} />
               <p className="text-slate-600 italic mb-6 relative z-10 font-medium">"{item.quote}"</p>
-              <p className="text-slate-900 font-bold">{item.author}</p>
+              <div className="flex items-center justify-between relative z-10">
+                <p className="text-slate-900 font-bold">{item.author}</p>
+                <img src="/logo-solo.png" alt="Cuidar BA" className="h-6 w-auto opacity-50" />
+              </div>
             </div>
           ))}
         </div>

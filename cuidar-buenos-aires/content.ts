@@ -112,8 +112,8 @@ export const content = {
   "testimonials": {
     "title": "Lo que dicen las familias",
     "items": [
-      { "quote": "Gracias a Cuidar Buenos Aires encontramos la paz que necesitábamos. El trato es excelente.", "author": "Marta S." },
-      { "quote": "Profesionalismo y calidez humana. Mi padre está muy bien cuidado.", "author": "Jorge L." },
+      { "quote": "Estamos muy tranquilos con el servicio. El cuidado de mi papá es responsable y constante, especialmente con su tratamiento", "author": "Lautaro Berón" },
+      { "quote": "Hola!! Muchas gracias porque quedamos muy conformes con el servicio!! La cuidadora fue amorosa, responsable y estuvo en cada detalle. Gracias Cuidar Buenos Aires! Super recomendable!!❤️🤗", "author": "Mónica Vega" },
       { "quote": "Respuesta rápida y personal muy capacitado. Super recomendables.", "author": "Silvia M." }
     ]
   },
