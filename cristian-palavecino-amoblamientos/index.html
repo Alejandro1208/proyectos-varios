@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="./images/logo-blanco.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cristian Palavecino Amoblamientos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                50: '#f9f6f4',
+                100: '#f3ede9',
+                200: '#e7dbd3',
+                300: '#d0baad',
+                400: '#b18f7d',
+                500: '#9b735e',
+                600: '#855d4b',
+                700: '#6f4c3e',
+                800: '#5d4037', // Close to wood logo
+                900: '#4e3731',
+              },
+              accent: '#D4AF37', // Gold/Brass accent
+            },
+            fontFamily: {
+              sans: ['Montserrat', 'sans-serif'],
+              serif: ['Playfair Display', 'serif'],
+            }
+          }
+        }
+      }
+    </script>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.4",
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "lucide-react": "https://esm.sh/lucide-react@^0.574.0",
+    "@google/genai": "https://esm.sh/@google/genai@^1.41.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/"
+  }
+}
+</script>
+<link rel="stylesheet" href="./index.css">
+</head>
+  <body class="bg-brand-50 text-stone-900 font-sans">
+    <div id="root"></div>
+    <script type="module" src="./index.tsx"></script>
+  </body>
+</html>

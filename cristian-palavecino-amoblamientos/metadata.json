@@ -1,0 +1,8 @@
+{
+  "name": "Cristian Palavecino Amoblamientos",
+  "description": "Exclusive landing page for Cristian Palavecino Amoblamientos, featuring custom furniture design, portfolio, and integrated AI furniture assistant.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}

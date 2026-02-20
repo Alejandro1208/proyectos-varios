@@ -11,6 +11,7 @@ const Navbar: React.FC = () => {
   const links = [
     { name: 'Inicio', path: '/' },
     { name: 'Sobre Mí / Proyectos', path: '/about' },
+    { name: 'Más allá del código', path: '/about#beyond' },
     { name: 'Redes / Contacto', path: '/contact' }
   ];
 

@@ -1,0 +1,97 @@
+
+{
+  "name": "Cristian Palavecino",
+  "logo": "images/logo-blanco.png",
+  "brandName": "Amoblamientos",
+  "tagline": "Diseño y Fabricación de Muebles a Medida",
+  "whatsappUrl": "https://wa.me/1234567890?text=Hola!%20Me%20interesa%20obtener%20más%20información%20sobre%20sus%20amoblamientos.",
+  "socials": {
+    "instagram": "https://instagram.com",
+    "facebook": "https://facebook.com",
+    "tiktok": "https://tiktok.com"
+  },
+  "navigation": [
+    { "label": "Inicio", "id": "home" },
+    { "label": "La Empresa", "id": "about" },
+    { "label": "Servicios", "id": "services" },
+    { "label": "Trabajos", "id": "portfolio" },
+    { "label": "Contacto", "id": "contact" }
+  ],
+  "banner": {
+    "title": "Transformamos tus espacios en hogares",
+    "subtitle": "Amoblamientos de alta gama diseñados exclusivamente para vos.",
+    "buttonText": "Mas info",
+    "image": "images/banner.jpg"
+  },
+  "about": {
+    "title": "Detalle y Calidad Garantizada",
+    "text": "En Cristian Palavecino Amoblamientos, entendemos que tu hogar es tu refugio. Con más de 10 años de experiencia, nos especializamos en crear piezas únicas que combinan funcionalidad y estética. Utilizamos materiales de primera línea y herrajes de última tecnología para asegurar que cada mueble no solo sea bello, sino duradero. Nuestra reputación se basa en la confianza de cientos de clientes que han transformado sus cocinas, vestidores y livings con nuestro asesoramiento personalizado.",
+    "image": "https://images.unsplash.com/photo-1581539250439-c96689b516dd?auto=format&fit=crop&q=80&w=1000"
+  },
+  "services": [
+    {
+      "title": "Cocinas Modernas",
+      "description": "Optimización total del espacio con diseños vanguardistas y acabados premium.",
+      "icon": "ChefHat"
+    },
+    {
+      "title": "Vestidores y Placards",
+      "description": "Organización inteligente a medida de tus necesidades y estilo de vida.",
+      "icon": "Layout"
+    },
+    {
+      "title": "Muebles de Living",
+      "description": "Centros de entretenimiento y modulares que definen el carácter de tu casa.",
+      "icon": "Sofa"
+    },
+    {
+      "title": "Oficinas y Locales",
+      "description": "Soluciones profesionales para entornos de trabajo productivos y elegantes.",
+      "icon": "Briefcase"
+    }
+  ],
+  "portfolio": [
+    {
+      "title": "Cocina Minimalista",
+      "category": "Cocinas",
+      "image": "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&q=80&w=800"
+    },
+    {
+      "title": "Vestidor Master Suite",
+      "category": "Dormitorios",
+      "image": "https://images.unsplash.com/photo-1595428774223-ef52624120d2?auto=format&fit=crop&q=80&w=800"
+    },
+    {
+      "title": "Home Office Moderno",
+      "category": "Oficinas",
+      "image": "https://images.unsplash.com/photo-1593062096033-9a26b09da705?auto=format&fit=crop&q=80&w=800"
+    },
+    {
+      "title": "Living Panel Madera",
+      "category": "Living",
+      "image": "https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?auto=format&fit=crop&q=80&w=800"
+    },
+    {
+      "title": "Isla de Cocina Cuarzo",
+      "category": "Cocinas",
+      "image": "images/banner.jpg"
+    },
+    {
+      "title": "Bajo Mesada Laqueado",
+      "category": "Cocinas",
+      "image": "images/bajo-mesada.jpg"
+    }
+  ],
+  "testimonials": [
+    {
+      "name": "Maria Garcia",
+      "role": "Propietaria",
+      "text": "Excelente atención. Mi cocina quedó tal cual la soñé. Super recomendables."
+    }
+  ],
+  "contact": {
+    "address": "Showroom: Av. Principal 1234, Ciudad",
+    "phone": "+54 9 11 1234 5678",
+    "email": "contacto@cristianpalavecino.com"
+  }
+}

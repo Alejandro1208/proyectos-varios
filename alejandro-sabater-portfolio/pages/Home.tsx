@@ -90,6 +90,7 @@ const Home: React.FC = () => {
           <div className="w-full flex justify-center lg:justify-end">
              <CodeBlock />
           </div>
+
         </div>
 
       </div>

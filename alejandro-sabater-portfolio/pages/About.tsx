@@ -1,7 +1,8 @@
 import React, { useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
-import { ExternalLink, Github, Code, Layers, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ExternalLink, Github, Code, Layers, ChevronLeft, ChevronRight, ArrowUpRight } from 'lucide-react';
 import { useAppData } from '../hooks/useAppData';
+import imagenLibro from '../images/libro.png';
 
 const About: React.FC = () => {
   const { data, loading, error } = useAppData();
@@ -183,6 +184,47 @@ const About: React.FC = () => {
                   </div>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Section: Beyond Code */}
+        <section id="beyond" className="space-y-6 scroll-mt-24">
+          <div className="flex items-end justify-between gap-4">
+            <h2 className="text-4xl font-extrabold text-white">Más allá del código</h2>
+          </div>
+
+          <div className="rounded-2xl border border-slate-700 bg-gradient-to-br from-slate-800/80 to-slate-900/80 p-6 sm:p-8 shadow-xl">
+            <div className="bg-slate-800 rounded-2xl overflow-hidden border border-slate-700 hover:border-indigo-500 transition-all duration-300 shadow-2xl">
+              <div className="p-8 md:p-10 grid grid-cols-1 md:grid-cols-[460px_1fr] gap-8 items-center">
+                <div className="w-full flex justify-center md:justify-start">
+                  <img
+                    src={imagenLibro}
+                    alt="Mockup del libro Entrar sin permiso"
+                    className="w-full max-w-[460px] md:max-w-[440px] rounded-xl shadow-lg rotate-[-1deg]"
+                  />
+                </div>
+                <div>
+                  <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-slate-900 text-indigo-300 border border-slate-700 mb-3">
+                    Autor publicado
+                  </span>
+                  <h3 className="text-2xl font-bold text-white mb-4">
+                    Documentando el proceso: Mi primer libro publicado.
+                  </h3>
+                  <p className="text-slate-300 mb-6">
+                    Escribir 'Entrar sin permiso' fue mi desafío personal más grande fuera de la programación. No es solo un libro; es la prueba tangible de que puedo estructurar ideas complejas, mantener la disciplina durante meses y llevar un proyecto grande desde cero hasta el final. Las mismas habilidades que aplico cuando desarrollo software.
+                  </p>
+                  <a
+                    href="https://www.amazon.com/dp/B0GN32XVDT"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center px-5 py-3 text-base font-semibold border border-transparent rounded-lg text-white bg-indigo-600 hover:bg-indigo-700 transition-colors shadow-lg hover:shadow-indigo-500/25"
+                  >
+                    Ver en Amazon
+                    <ArrowUpRight className="ml-2 w-4 h-4" />
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </section>
