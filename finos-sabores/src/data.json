@@ -1,0 +1,73 @@
+{
+  "company": {
+    "name": "Finos Sabores",
+    "logo": "https://picsum.photos/seed/cake-logo/100/100",
+    "description": "En Finos Sabores transformamos tus sueños en realidad comestible. Con más de 10 años de experiencia, cada torta es una obra de arte única diseñada para celebrar los momentos más especiales de tu vida.",
+    "stats": {
+      "clients": 450,
+      "events": 680
+    }
+  },
+  "navigation": [
+    { "label": "La empresa", "href": "#empresa" },
+    { "label": "Trabajos", "href": "#trabajos" },
+    { "label": "Presupuesto", "href": "#presupuesto" },
+    { "label": "Contacto", "href": "#contacto" }
+  ],
+  "hero": {
+    "title": "Momentos dulces, diseños inolvidables",
+    "subtitle": "Tortas personalizadas para cada ocasión especial.",
+    "backgroundImage": "https://images.unsplash.com/photo-1535141192574-5d4897c12636?auto=format&fit=crop&q=80&w=1920",
+    "ctaBudget": "Pedir Presupuesto",
+    "ctaProjects": "Ver Proyectos"
+  },
+  "gallery": [
+    "https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&q=80&w=800",
+    "https://images.unsplash.com/photo-1562700850-81461168a990?auto=format&fit=crop&q=80&w=800",
+    "https://images.unsplash.com/photo-1588195538326-c5b1e9f80a1b?auto=format&fit=crop&q=80&w=800",
+    "https://images.unsplash.com/photo-1535254973040-607b474cb8c2?auto=format&fit=crop&q=80&w=800",
+    "https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?auto=format&fit=crop&q=80&w=800",
+    "https://images.unsplash.com/photo-1519340333755-56e9c1d04579?auto=format&fit=crop&q=80&w=800",
+    "https://images.unsplash.com/photo-1557925923-33b27f891f88?auto=format&fit=crop&q=80&w=800",
+    "https://images.unsplash.com/photo-1516731415730-0c607149933a?auto=format&fit=crop&q=80&w=800",
+    "https://images.unsplash.com/photo-1534432182912-63863115e106?auto=format&fit=crop&q=80&w=800",
+    "https://images.unsplash.com/photo-1542826438-bd32f43d626f?auto=format&fit=crop&q=80&w=800",
+    "https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?auto=format&fit=crop&q=80&w=800",
+    "https://images.unsplash.com/photo-1550617931-e17a7b70dce2?auto=format&fit=crop&q=80&w=800",
+    "https://images.unsplash.com/photo-1559620192-032c4bc4674e?auto=format&fit=crop&q=80&w=800",
+    "https://images.unsplash.com/photo-1519340241574-2dec499b632b?auto=format&fit=crop&q=80&w=800",
+    "https://images.unsplash.com/photo-1514517604298-cf80e0fb7f1e?auto=format&fit=crop&q=80&w=800",
+    "https://images.unsplash.com/photo-1551879400-111a9087cd86?auto=format&fit=crop&q=80&w=800",
+    "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&q=80&w=800",
+    "https://images.unsplash.com/photo-1560184071-27ca74ee7453?auto=format&fit=crop&q=80&w=800",
+    "https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&q=80&w=800",
+    "https://images.unsplash.com/photo-1576618148400-f54bed99fcfd?auto=format&fit=crop&q=80&w=800"
+  ],
+  "budget": {
+    "fillings": ["Dulce de leche", "Crema pastelera", "Chocolate", "Frutos rojos", "Nutella", "Mousse de limón"],
+    "types": [
+      { "id": "clasica", "label": "Torta Clásica" },
+      { "id": "personalizada", "label": "Diseño Personalizado" }
+    ]
+  },
+  "breakfasts": {
+    "title": "Desayunos Personalizados",
+    "description": "Consulta nuestros desayunos personalizados para todo tipo de evento: cumpleaños, aniversarios, o simplemente para sorprender.",
+    "images": [
+      "https://images.unsplash.com/photo-1513442542250-854d436a73f2?auto=format&fit=crop&q=80&w=800",
+      "https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?auto=format&fit=crop&q=80&w=800",
+      "https://images.unsplash.com/photo-1495214783159-3503fd1b572d?auto=format&fit=crop&q=80&w=800",
+      "https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&q=80&w=800"
+    ]
+  },
+  "contact": {
+    "whatsapp": "https://wa.me/1234567890",
+    "email": "eventos@finossabores.com",
+    "emailLabel": "Contrataciones para eventos",
+    "social": [
+      { "name": "Instagram", "url": "https://instagram.com" },
+      { "name": "Facebook", "url": "https://facebook.com" },
+      { "name": "Pinterest", "url": "https://pinterest.com" }
+    ]
+  }
+}
