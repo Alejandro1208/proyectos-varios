@@ -1,0 +1,97 @@
+{
+  "company": {
+    "name": "C & D Fabricaciones Especiales",
+    "tagline": "Líderes en Fabricaciones Especiales",
+    "description": "Transformamos tus ideas en realidades móviles. Especialistas en Food Trucks, exhibidores de alto impacto y soluciones térmicas para transporte refrigerado.",
+    "experience": "+15 Años de Experiencia",
+    "experienceSub": "Calidad garantizada",
+    "whatsapp": "5491165367593",
+    "email": "contacto@cdfabricaciones.com",
+    "phone": "+54 11 1234-5678",
+    "location": "Buenos Aires, Argentina"
+  },
+  "navigation": [
+    { "name": "Inicio", "href": "#inicio" },
+    { "name": "Empresa", "href": "#empresa" },
+    { "name": "Servicios", "href": "#servicios" },
+    { "name": "Contacto", "href": "#contacto" }
+  ],
+  "about": {
+    "title": "Pasión por la Fabricación de Excelencia",
+    "subtitle": "Nuestra Historia",
+    "description": "En C & D Fabricaciones Especiales, nos dedicamos a crear soluciones móviles y de exhibición que impulsan el crecimiento de nuestros clientes. Con años de trayectoria en el mercado, hemos perfeccionado nuestros procesos para ofrecer productos que combinan diseño vanguardista, funcionalidad extrema y durabilidad garantizada. Somos expertos en laminación en fibra de vidrio, desarrollando modelo, matriceria y piezas de producción.",
+    "items": [
+      "Compromiso inquebrantable con la calidad",
+      "Innovación constante en materiales y técnicas",
+      "Atención personalizada en cada proyecto",
+      "Entrega en tiempo y forma acordados"
+    ],
+    "stats": [
+      { "label": "Calidad Certificada", "value": "100%" },
+      { "label": "Clientes Felices", "value": "500+" },
+      { "label": "Proyectos Realizados", "value": "1200+" }
+    ],
+    "image": "/images/food3.jpeg"
+  },
+  "services": [
+    {
+      "id": "food-trucks",
+      "title": "Food Trucks",
+      "description": "Fabricación de food trucks. Proyectos a pedido modelos exclusivos. Diseñamos unidades móviles gastronómicas totalmente equipadas y personalizadas para tu marca.",
+      "longDescription": "Nuestros Food Trucks están diseñados para maximizar la eficiencia operativa sin sacrificar el estilo. Utilizamos materiales de primera calidad y cumplimos con todas las normativas vigentes.",
+      "images": [
+        "/images/food1.jpeg",
+        "/images/food2.jpeg",
+        "/images/food3.jpeg",
+        "/images/food4.jpeg",
+        "/images/food5.jpeg",
+        "/images/food6.jpeg"
+      ],
+      "specs": [
+        "Chasis reforzado con perfil UPN 80mm",
+        "Revestimiento interior en acero inoxidable 304",
+        "Instalación eléctrica trifásica certificada",
+        "Sistema de agua con bombas automáticas",
+        "Aislación térmica de alta densidad en paredes y techo"
+      ]
+    },
+    {
+      "id": "exhibidores",
+      "title": "Exhibidores Especiales",
+      "description": "Exhibidores especiales proyectos desarrollo y fabricación. Creamos unidades de exhibición únicas, incluyendo conversiones de vehículos clásicos como VW Kombi o Piaggio Ape.",
+      "longDescription": "Desarrollamos exhibidores que capturan la atención. Desde góndolas temáticas hasta vehículos vintage transformados en puntos de venta para eventos y retail.",
+      "images": [
+        "/images/exi1.png",
+        "/images/exi2.png",
+        "/images/exi3.png",
+        "/images/exi4.png",
+        "/images/exi5.png",
+        "/images/exi6.png"
+      ],
+      "specs": [
+        "Estructura modular desmontable de aluminio",
+        "Iluminación LED RGB integrada y programable",
+        "Materiales compuestos ligeros de alta resistencia",
+        "Personalización con vinilo UV de larga duración",
+        "Conectividad WiFi y puertos de carga USB integrados"
+      ]
+    },
+    {
+      "id": "cajas-termicas",
+      "title": "Cajas Térmicas",
+      "description": "Cajas térmicas carga refrigerada. Fabricación de unidades de transporte con aislamiento térmico de alta densidad para mantener la cadena de frío.",
+      "longDescription": "Nuestras cajas térmicas están construidas para resistir el uso intensivo, garantizando la integridad de la carga refrigerada mediante tecnología de aislamiento avanzada.",
+      "images": [
+        "/images/cajas1.png"
+      ],
+      "specs": [
+        "Paneles de poliuretano",
+        "Revestimiento exterior en placa de PRFV placa de fibra de vidrio reforzado",
+        "Coeficiente de transmisión térmica K < 0.4",
+        "Piso laminado en una pieza de fibra de vidrio creando una batea estanca anti derrame",
+        "Herrajes de acero inoxidable reforzados",
+        "Burletes de goma de triple contacto para sellado hermético"
+      ]
+    }
+  ]
+}

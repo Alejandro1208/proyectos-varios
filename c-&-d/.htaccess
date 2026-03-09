@@ -1,0 +1,28 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # ESTRATEGIA NUEVA:
+  # Si la petición termina en una extensión de archivo estático, NO reescribir nunca.
+  # Esto evita que devuelva index.html si falla la carga del archivo.
+  RewriteRule \.(js|css|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|eot|map)$ - [L]
+
+  # Para todo lo demás (rutas de la app como /contacto), sirve el index.html
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^ index.html [L]
+</IfModule>
+
+# Forzar tipos MIME correctos para asegurar que el navegador procese los estilos
+<IfModule mod_mime.c>
+  AddType text/css .css
+  AddType application/javascript .js
+</IfModule>
+
+# Deshabilitar caché agresivamente para evitar errores de "disk cache"
+<IfModule mod_headers.c>
+  <FilesMatch "\.(html|htm|js|css)$">
+    Header set Cache-Control "max-age=0, no-cache, no-store, must-revalidate"
+    Header set Pragma "no-cache"
+  </FilesMatch>
+</IfModule>
