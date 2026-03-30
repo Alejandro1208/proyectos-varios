@@ -3,7 +3,6 @@ require_once __DIR__ . '/config.php';
 $pdo = get_pdo();
 $method = method_override();
 
-// Crea la tabla si no existe (evita fallos en hosts sin migrar)
 $pdo->exec("
 CREATE TABLE IF NOT EXISTS hero_content (
   id INT UNSIGNED NOT NULL AUTO_INCREMENT,
@@ -32,14 +31,12 @@ try {
         if ($upload) {
             $image = $upload;
         }
-        // Evitar guardar data URLs base64 si no se pudo subir el archivo
         if ($upload === null && preg_match('/^data:/', $image)) {
             json_response(['error' => 'No se pudo subir la imagen del banner'], 400);
         }
         if ($title === '' || $subtitle === '' || $image === '') {
             json_response(['error' => 'Faltan campos'], 400);
         }
-        // Si ya existe un registro, actualizamos; si no, creamos uno nuevo
         $existing = $pdo->query('SELECT id FROM hero_content ORDER BY id DESC LIMIT 1')->fetchColumn();
         if ($existing) {
             $stmt = $pdo->prepare('UPDATE hero_content SET title = ?, subtitle = ?, image = ? WHERE id = ?');

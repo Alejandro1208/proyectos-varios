@@ -11,6 +11,7 @@ export const content = {
     { "label": "Inicio", "href": "#inicio" },
     { "label": "Empresa", "href": "#empresa" },
     { "label": "Servicios", "href": "#servicios" },
+    { "label": "Quienes Somos", "href": "#staff" },
     { "label": "Protocolos", "href": "#protocolos" },
     { "label": "Pasos", "href": "#proceso" }
   ],
@@ -83,6 +84,42 @@ export const content = {
       ],
       "disclaimer": "Atención por profesionales especializados."
     }
+  },
+  "staff": {
+    "title": "Nuestro Equipo",
+    "description": "Conoce a las personas que hacen posible Cuidar Buenos Aires. Profesionales con vocación, compromiso y una calidad humana que nos define.",
+    "members": [
+      {
+        "role": "Fundadora y Dirección General",
+        "name": "Rocio",
+        "desc": "Fundadora de Cuidar Buenos Aires. Comprometida con el cuidado domiciliario. Respeto, responsabilidad y calidad humana.",
+        "img": "/recursos/rocio-fundadora-direccion-general.jpeg"
+      },
+      {
+        "role": "Coordinadora de Servicios",
+        "name": "Rocio",
+        "desc": "Coordinadora de servicios en Cuidar Buenos Aires. Responsable de la organización y seguimiento de los cuidados domiciliarios.",
+        "img": "/recursos/rocio-coordinadora-de-servicios.jpeg"
+      },
+      {
+        "role": "Recursos Humanos",
+        "name": "Florencia",
+        "desc": "Responsable del area de Recursos Humanos. Encargada del proceso de entrevistas y seleccion de cuidadores.",
+        "img": "/recursos/florencia-recursos-humanos.jpeg"
+      },
+      {
+        "role": "Cuidadora Domiciliaria",
+        "name": "July",
+        "desc": "Cuidadora del equipo de Cuidar Buenos Aires. Brinda acompañamiento y asistencia on compromiso y respeto.",
+        "img": "/recursos/july-cuidadora-domiciliaria.jpeg"
+      },
+      {
+        "role": "Cuidadora Domiciliaria",
+        "name": "Sandra",
+        "desc": "Cuidadora del equipo de Cuidar Buenos Aires. Brinda acompañamiento y asistencia on compromiso y respeto.",
+        "img": "/recursos/sandra-cuidadora-domiciliaria.jpeg"
+      }
+    ]
   },
   "protocols": {
     "title": "Garantía de Calidad",

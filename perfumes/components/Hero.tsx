@@ -14,7 +14,6 @@ interface Props {
 const Hero: React.FC<Props> = ({ onViewCatalog, hero }) => {
   return (
     <section className="relative h-[90vh] flex items-center justify-center bg-[#0E0F26] overflow-hidden">
-      {/* Background Image with heavy overlay */}
       <div className="absolute inset-0">
         <img 
           src={hero.image} 
@@ -24,7 +23,7 @@ const Hero: React.FC<Props> = ({ onViewCatalog, hero }) => {
         <div className="absolute inset-0 bg-gradient-to-b from-[#0E0F26]/55 via-[#0D0D0D]/45 to-[#0E0F26]/60"></div>
       </div>
 
-      {/* Content */}
+
       <div className="relative z-10 text-center px-6">
         <h1 className="text-5xl md:text-7xl font-bold text-[#F2F2F2] tracking-tighter mb-6">
           {hero.title}

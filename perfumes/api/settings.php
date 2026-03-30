@@ -5,14 +5,12 @@ $method = method_override();
 
 try {
     if ($method === 'GET') {
-        // Devolver todas las configuraciones como un objeto JSON
         $stmt = $pdo->query('SELECT `key`, `value` FROM settings');
         $settings = $stmt->fetchAll(PDO::FETCH_KEY_PAIR);
         json_response($settings);
     }
 
     if ($method === 'POST' || $method === 'PUT') {
-        // Manejar actualización genérica o específica del teléfono
         if (isset($_POST['key']) && isset($_POST['value'])) {
             $key = $_POST['key'];
             $value = $_POST['value'];

@@ -85,7 +85,6 @@ const Catalog: React.FC<Props> = ({ phone, products, discount, categorySettings 
     window.open(`https://wa.me/${phone}?text=${encodedMessage}`, '_blank');
   };
 
-  // Verificar si la categoría actual está pausada
   const isPaused = activeCategory !== 'todos' && categorySettings[`paused_${activeCategory.replace(' ', '_')}`];
 
   return (

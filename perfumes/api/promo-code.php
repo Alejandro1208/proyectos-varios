@@ -14,7 +14,6 @@ if ($method === 'GET') {
 if ($method === 'POST') {
     $data = input_body();
     
-    // Aseguramos que exista la fila ID 1
     $pdo->query("INSERT IGNORE INTO promo_codes (id, code, discount_percentage, is_active) VALUES (1, '', 0, 0)");
     $stmt = $pdo->prepare("UPDATE promo_codes SET code = ?, discount_percentage = ?, is_active = ? WHERE id = 1");
     $stmt->execute([

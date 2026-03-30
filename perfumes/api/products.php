@@ -9,7 +9,6 @@ function upload_image_if_present(string $field = 'image'): ?string {
 }
 
 try {
-    // Reordenar productos
     if ($method === 'POST' && ($_POST['action'] ?? '') === 'reorder') {
         $order = json_decode($_POST['order'] ?? '[]', true);
         if (!is_array($order)) {
@@ -28,7 +27,6 @@ try {
         case 'GET':
             $stmt = $pdo->query('SELECT * FROM products ORDER BY sort_order ASC');
             $products = $stmt->fetchAll();
-            // Convertir tipos numéricos para consistencia con el frontend
             foreach ($products as &$p) {
                 $p['id'] = (int)$p['id'];
                 $p['price'] = (float)$p['price'];
@@ -53,7 +51,7 @@ try {
                 $_POST['description'] ?? '',
                 $_POST['stock'] ?? 0,
                 !empty($_POST['featured']) ? 1 : 0,
-                0 // Orden por defecto
+                0 
             ]);
             json_response(['message' => 'Producto creado', 'id' => $pdo->lastInsertId()]);
             break;

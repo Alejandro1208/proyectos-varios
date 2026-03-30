@@ -20,7 +20,6 @@ try {
         if ($title === '' || $description === '' || $video === '') {
             json_response(['error' => 'Faltan campos'], 400);
         }
-        // Actualiza el último registro; si no existe, inserta uno nuevo
         $existing = $pdo->query('SELECT id FROM how_to_buy ORDER BY id DESC LIMIT 1')->fetchColumn();
         if ($existing) {
             $stmt = $pdo->prepare('UPDATE how_to_buy SET title = ?, description = ?, video_url = ? WHERE id = ?');

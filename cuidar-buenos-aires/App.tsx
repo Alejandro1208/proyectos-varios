@@ -319,6 +319,89 @@ const Services: React.FC = () => {
   );
 };
 
+const Staff: React.FC = () => {
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('fade-in-up');
+          } else {
+            entry.target.classList.remove('fade-in-up');
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    const elements = document.querySelectorAll('.staff-card');
+    elements.forEach((el) => observer.observe(el));
+
+    return () => {
+      elements.forEach((el) => observer.unobserve(el));
+    };
+  }, []);
+
+  return (
+    <section id="staff" className="py-10 md:py-12 bg-blue-50/50">
+      <div className="container mx-auto px-6">
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <h2 className="text-3xl md:text-5xl font-bold text-blue-900 mb-4 tracking-tight">
+            {content.staff.title}
+          </h2>
+          <p className="text-slate-600 text-lg font-medium">{content.staff.description}</p>
+        </div>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-8">
+          {content.staff.members.map((member, i) => (
+            <div
+              key={i}
+              className="staff-card bg-white p-6 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 relative overflow-hidden group opacity-0"
+              style={
+                {
+                  '--shadow-color': 'rgba(59, 130, 246, 0.3)',
+                  boxShadow: '0 10px 15px -3px var(--shadow-color), 0 4px 6px -2px var(--shadow-color)',
+                  animationDelay: `${i * 100}ms`,
+                } as React.CSSProperties
+              }
+            >
+              <div className="absolute bottom-0 left-0 w-full h-full" style={{background: 'radial-gradient(circle at 0% 100%, rgba(59,130,246,0.15) 0%, rgba(59,130,246,0) 25%)'}}></div>
+              <div className="absolute top-0 left-0 text-blue-100/90">
+                <div className="absolute top-0 left-0 text-8xl font-bold opacity-50">+</div>
+                <div className="absolute top-6 left-6 text-9xl font-bold opacity-50">+</div>
+              </div>
+              <div className="relative z-10 flex flex-col items-center text-center h-full">
+                <span className="text-xs font-bold text-blue-900 mb-4 tracking-wider uppercase">
+                  {member.role}
+                </span>
+                <img
+                  src={member.img}
+                  alt={member.name}
+                  className={`w-24 h-24 rounded-full object-cover mb-4 border-4 border-blue-400 shadow-md transition-transform duration-300 group-hover:scale-110 ${
+                    (member.name === 'Florencia' || (member.name === 'Rocio' && member.role === 'Coordinadora de Servicios')) ? 'object-top' : ''
+                  }`}
+                />
+                <h3 className="text-xl font-bold text-blue-900 mb-2">
+                  {member.name}
+                </h3>
+                <p className="text-sm text-blue-900/80 font-medium leading-relaxed flex-grow">
+                  {member.desc}
+                </p>
+                <img
+                  src="/logo.png"
+                  alt="Logo"
+                  className="h-12 w-auto mt-6 opacity-50 transition-opacity duration-300 group-hover:opacity-100"
+                />
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+
 const Protocols: React.FC = () => {
   return (
     <section id="protocolos" className="py-20 md:py-32 bg-white">
@@ -525,6 +608,7 @@ const App: React.FC = () => {
         <Hero />
         <About />
         <Services />
+        <Staff />
         <Protocols />
         <Process />
         <Testimonials />

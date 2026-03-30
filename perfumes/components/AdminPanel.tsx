@@ -1,9 +1,9 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { Edit2, Trash2, Plus, LayoutDashboard, LogOut, X, RotateCw, Tag } from 'lucide-react';
 import { CONFIG } from '../constants';
-import { Product, HeroContent, HowToBuy, /* LuckyWheelData, */ PromoCode } from '../types';
+import { Product, HeroContent, HowToBuy, PromoCode } from '../types';
 import { fetchProducts, fetchHero, fetchHowToBuy, fetchPhone, createProduct, updateProduct, deleteProduct, reorderProducts, saveHero, saveHowToBuy, savePhone, fetchPromoCode, savePromoCode, /* fetchLuckyWheel, saveLuckyWheel */ } from '../api-client';
-import { products as staticProducts, /* luckyWheel as staticLuckyWheel, */ promoCode as staticPromoCode } from '../data';
+import { products as staticProducts,  promoCode as staticPromoCode } from '../data';
 
 interface Props {
   onLogout: () => void;
@@ -28,7 +28,6 @@ const AdminPanel: React.FC<Props> = ({ onLogout, phone, onPhoneChange, products,
   const [notice, setNotice] = useState<string>('');
   const [draggingId, setDraggingId] = useState<number | null>(null);
   const [heroFile, setHeroFile] = useState<File | null>(null);
-  // const [luckyWheelData, setLuckyWheelData] = useState<LuckyWheelData | null>(staticLuckyWheel);
   const [promoData, setPromoData] = useState<PromoCode>(staticPromoCode);
   const [categorySettings, setCategorySettings] = useState<Record<string, boolean>>({});
 
@@ -81,17 +80,15 @@ const AdminPanel: React.FC<Props> = ({ onLogout, phone, onPhoneChange, products,
           fetchPhone(),
           fetchPromoCode(),
           fetchProducts(),
-          // fetchLuckyWheel(),
+
         ]);
         onProductsChange(prods || staticProducts);
         onHeroChange(h);
         onHowToBuyChange(c);
         onPhoneChange(ph || CONFIG.phone);
         setPhoneInput(ph || CONFIG.phone);
-        // setLuckyWheelData(wheelData || staticLuckyWheel);
         setPromoData(promo || staticPromoCode);
 
-        // Cargar estado de categorías
         try {
           const res = await fetch('/api/settings.php');
           if (res.ok) {
@@ -254,41 +251,7 @@ const AdminPanel: React.FC<Props> = ({ onLogout, phone, onPhoneChange, products,
       .catch(() => setNotice('No se pudo guardar el orden'));
   };
 
-  /*
-  const handleSaveLuckyWheel = async () => {
-    if (!luckyWheelData) return;
-    try {
-      // En el modo actual, esto guardará en lucky-wheel.json
-      // En producción, guardará en la base de datos.
-      await saveLuckyWheel(luckyWheelData);
-      setNotice('Rueda de la fortuna guardada');
-    } catch (err) {
-      console.error('Error guardando la rueda', err);
-      setNotice('No se pudo guardar la rueda');
-    }
-  };
 
-  const handleLuckyWheelChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>, index?: number) => {
-    if (!luckyWheelData) return;
-    const { name, value } = e.target;
-    if (index !== undefined) {
-      const newPrizes = [...luckyWheelData.prizes];
-      newPrizes[index] = { ...newPrizes[index], [name]: value };
-      setLuckyWheelData({ ...luckyWheelData, prizes: newPrizes });
-    } else {
-      setLuckyWheelData({
-        ...luckyWheelData,
-        settings: { ...luckyWheelData.settings, [name]: value },
-      });
-    }
-  };
-
-  const handleResetLuckyWheel = () => {
-    localStorage.removeItem('lastSpin');
-    localStorage.removeItem('luckyWheelState');
-    setNotice('Datos de la rueda reiniciados en localStorage. Recargá la página principal para verla de nuevo.');
-  };
-  */
 
   const handleSavePromo = async () => {
     try {
@@ -340,7 +303,6 @@ const AdminPanel: React.FC<Props> = ({ onLogout, phone, onPhoneChange, products,
               { key: 'banner', label: 'Banner' },
               { key: 'como', label: 'Cómo comprar' },
               { key: 'contacto', label: 'Contacto' },
-              // { key: 'rueda', label: 'Rueda de la Fortuna' },
               { key: 'promo', label: 'Código Promo' },
               { key: 'categorias', label: 'Categorías' },
             ].map((tab) => (
@@ -676,83 +638,7 @@ const AdminPanel: React.FC<Props> = ({ onLogout, phone, onPhoneChange, products,
           </div>
         )}
 
-        {/* 
-        {activeTab === 'rueda' && luckyWheelData && (
-          <div className="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 mb-8 grid gap-4">
-            <div className="space-y-2">
-                <p className="text-xs font-bold uppercase tracking-widest text-slate-500">Tiros por usuario</p>
-                <input
-                    type="number"
-                    name="spins_per_user"
-                    value={luckyWheelData.settings.spins_per_user}
-                    onChange={handleLuckyWheelChange}
-                    className="w-full bg-slate-100 border-none p-3 rounded-xl focus:ring-2 focus:ring-black outline-none"
-                />
-            </div>
-            <div className="space-y-2">
-                <p className="text-xs font-bold uppercase tracking-widest text-slate-500">Duración de la promoción (horas)</p>
-                <input
-                    type="number"
-                    name="duration_hours"
-                    value={luckyWheelData.settings.duration_hours}
-                    onChange={handleLuckyWheelChange}
-                    className="w-full bg-slate-100 border-none p-3 rounded-xl focus:ring-2 focus:ring-black outline-none"
-                />
-            </div>
-            <div className="flex items-center gap-3 py-2">
-              <input
-                type="checkbox"
-                id="wheelActive"
-                name="is_active"
-                checked={luckyWheelData.settings.is_active === '1'}
-                onChange={(e) => handleLuckyWheelChange({ target: { name: 'is_active', value: e.target.checked ? '1' : '0' } } as any)}
-                className="w-5 h-5 accent-black"
-              />
-              <label htmlFor="wheelActive" className="font-medium text-slate-700 cursor-pointer">Activar Rueda de la Fortuna</label>
-            </div>
-            <hr className="my-4" />
-            <h3 className="text-lg font-bold">Premios</h3>
-            {luckyWheelData.prizes.map((prize, index) => (
-                <div key={prize.id} className="grid grid-cols-1 md:grid-cols-5 gap-4 border-b pb-4">
-                    <div className="space-y-2">
-                        <p className="text-xs font-bold uppercase tracking-widest text-slate-500">Nombre del Premio</p>
-                        <input name="name" value={prize.name} onChange={(e) => handleLuckyWheelChange(e, index)} className="w-full bg-slate-100 border-none p-3 rounded-xl focus:ring-2 focus:ring-black outline-none" placeholder="Nombre del premio" />
-                    </div>
-                    <div className="space-y-2">
-                        <p className="text-xs font-bold uppercase tracking-widest text-slate-500">Valor</p>
-                        <input name="value" value={prize.value} onChange={(e) => handleLuckyWheelChange(e, index)} className="w-full bg-slate-100 border-none p-3 rounded-xl focus:ring-2 focus:ring-black outline-none" placeholder="Valor (ej: 10 o free_shipping)" />
-                    </div>
-                    <div className="space-y-2">
-                        <p className="text-xs font-bold uppercase tracking-widest text-slate-500">Probabilidad (%)</p>
-                        <input type="number" step="0.01" name="chance" value={prize.chance} onChange={(e) => handleLuckyWheelChange(e, index)} className="w-full bg-slate-100 border-none p-3 rounded-xl focus:ring-2 focus:ring-black outline-none" placeholder="Probabilidad (%)" />
-                    </div>
-                    <div className="space-y-2">
-                        <p className="text-xs font-bold uppercase tracking-widest text-slate-500">Color de Fondo</p>
-                        <input type="color" name="background_color" value={prize.background_color} onChange={(e) => handleLuckyWheelChange(e, index)} className="w-full h-12 p-1 rounded-xl" />
-                    </div>
-                    <div className="space-y-2">
-                        <p className="text-xs font-bold uppercase tracking-widest text-slate-500">Color de Texto</p>
-                        <input type="color" name="text_color" value={prize.text_color} onChange={(e) => handleLuckyWheelChange(e, index)} className="w-full h-12 p-1 rounded-xl" />
-                    </div>
-                </div>
-            ))}
-             <div className="flex justify-end gap-4 mt-4">
-              <button
-                onClick={handleResetLuckyWheel}
-                className="px-5 py-3 rounded-lg font-semibold bg-amber-100 text-amber-800 hover:bg-amber-200 transition-all text-sm"
-              >
-                Reiniciar Rueda (para pruebas)
-              </button>
-              <button
-                onClick={handleSaveLuckyWheel}
-                className="px-5 py-3 rounded-lg font-bold bg-slate-900 text-white hover:bg-slate-800 transition-all"
-              >
-                Guardar Rueda de la Fortuna
-              </button>
-            </div>
-          </div>
-        )}
-        */}
+    
 
         {activeTab === 'promo' && (
           <div className="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 mb-8 grid gap-4 md:grid-cols-2">

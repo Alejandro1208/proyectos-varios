@@ -1,9 +1,8 @@
 <?php
-// Datos de conexión (relleno). Cambiá estos valores en producción.
 const DB_HOST = 'localhost';
-const DB_NAME = 'ale287_growsestore';
-const DB_USER = 'ale287_Alejandro';
-const DB_PASS = 'Giovanni2906.';
+const DB_NAME = '';
+const DB_USER = '';
+const DB_PASS = '';
 
 function get_pdo(): PDO {
     static $pdo = null;
