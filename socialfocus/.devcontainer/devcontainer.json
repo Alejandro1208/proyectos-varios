@@ -1,0 +1,17 @@
+{
+  "name": "SocialFocus Stack",
+  // Agregamos "../" para que salga de .devcontainer y lo encuentre en la raíz
+  "dockerComposeFile": "../docker-compose.yml", 
+  "service": "frontend",
+  "workspaceFolder": "/app",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "xdebug.php-debug",
+        "bradlc.vscode-tailwindcss"
+      ]
+    }
+  }
+}

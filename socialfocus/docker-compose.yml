@@ -1,0 +1,31 @@
+services:
+  # Servidor de PHP para la API
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile.php
+    ports:
+      - "8000:80"
+    volumes:
+      - ./api:/var/www/html
+    networks:
+      - socialfocus-network
+
+  # Servidor de Vite para el Frontend
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.node
+    ports:
+      - "5173:5173"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    environment:
+      - VITE_API_URL=http://localhost:8000
+    networks:
+      - socialfocus-network
+
+networks:
+  socialfocus-network:
+    driver: bridge

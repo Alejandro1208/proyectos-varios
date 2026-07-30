@@ -34,6 +34,7 @@ export interface SiteData {
   spareParts: {
     title: string;
     description: string;
+    deliveryInfo?: string;
     categories: string[];
     image: string;
   };

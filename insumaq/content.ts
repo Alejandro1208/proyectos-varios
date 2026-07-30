@@ -14,7 +14,7 @@ export const siteData: SiteData = {
   ],
   "hero": {
     "title": "Soluciones Integrales en Maquinaria",
-    "subtitle": "Especialistas en mantenimiento correctivo, preventivo y venta de repuestos originales para que su potencia nunca se detenga.",
+    "subtitle": "Especialistas en mantenimiento, venta de repuestos y fabricación de tamaños especiales, con demora máxima de 15 días hábiles.",
     "ctaText": "Ver Servicios",
     "backgroundImage": "/banner.jpg"
   },
@@ -46,7 +46,8 @@ export const siteData: SiteData = {
   ],
   "spareParts": {
     "title": "Repuestos Certificados",
-    "description": "Amplio stock de componentes críticos para marcas líderes. Aseguramos la compatibilidad y durabilidad que su maquinaria exige.",
+    "description": "Nuestro fuerte es la atención de tamaños especiales y repuestos de difícil consecución. Aseguramos compatibilidad, durabilidad y una demora máxima de 15 días hábiles.",
+    "deliveryInfo": "Demora máxima de 15 días hábiles.",
     "categories": [
       "Bombas y Motores Hidráulicos",
       "Kits de Filtros Originales",

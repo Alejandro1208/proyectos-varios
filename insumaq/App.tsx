@@ -128,9 +128,16 @@ const App: React.FC = () => {
             </div>
             <div className="w-full lg:w-1/2">
               <h2 className="text-4xl md:text-6xl font-black mb-6 italic uppercase tracking-tighter text-[#002b52]">{data.spareParts.title}</h2>
-              <p className="text-gray-600 text-lg mb-10 leading-relaxed font-medium">
+              <p className="text-gray-600 text-lg mb-6 leading-relaxed font-medium">
                 {data.spareParts.description}
               </p>
+              <div className="mb-8 rounded-sm border border-[#FDB813]/40 bg-[#FDB813]/10 p-5 shadow-sm">
+                <p className="text-sm font-black uppercase tracking-[0.2em] text-[#0055A4] mb-2">Nuestro fuerte</p>
+                <p className="text-xl font-black text-[#002b52]">Tamaños especiales y repuestos difíciles de conseguir</p>
+                <p className="text-gray-700 mt-2">
+                  Demora máxima de <span className="font-black text-[#002b52]">15 días hábiles</span> para la entrega.
+                </p>
+              </div>
               <div className="space-y-4 mb-10">
                 {data.spareParts.categories.map((cat, idx) => (
                   <div key={idx} className="flex items-center space-x-4 bg-white p-4 shadow-sm rounded-sm group hover:bg-[#0055A4] transition-colors">
