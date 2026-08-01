@@ -36,11 +36,16 @@ export interface SiteData {
     description: string;
     deliveryInfo?: string;
     categories: string[];
+    brands: string[];
+    brandLogos: {
+      name: string;
+      src: string;
+    }[];
     image: string;
   };
   contact: {
     email: string;
-    phone: string;
+    phones: string[];
     address: string;
     hours: string;
   };

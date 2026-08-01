@@ -9,6 +9,10 @@ interface HeroProps {
 }
 
 const Hero: React.FC<HeroProps> = ({ title, subtitle, ctaText, backgroundImage }) => {
+  const imageUrl = backgroundImage.startsWith('http') || backgroundImage.startsWith('/')
+    ? backgroundImage
+    : `/${backgroundImage}`;
+
   const handleCtaClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
     const element = document.getElementById('servicios');
@@ -30,7 +34,7 @@ const Hero: React.FC<HeroProps> = ({ title, subtitle, ctaText, backgroundImage }
     >
       <div 
         className="absolute inset-0 bg-cover bg-center z-0 scale-105 animate-slow-zoom"
-        style={{ backgroundImage: `url(${backgroundImage})` }}
+        style={{ backgroundImage: `url(${imageUrl})` }}
       >
         <div className="absolute inset-0 bg-gradient-to-r from-[#002b52]/90 via-[#002b52]/40 to-transparent"></div>
       </div>
@@ -42,7 +46,7 @@ const Hero: React.FC<HeroProps> = ({ title, subtitle, ctaText, backgroundImage }
         <h1 className="text-5xl md:text-8xl font-black mb-6 leading-[0.9] italic uppercase tracking-tighter animate-fade-in-up">
           {title}
         </h1>
-        <p className="text-xl md:text-2xl mb-10 text-gray-200 font-medium max-w-2xl leading-relaxed">
+        <p className="text-base md:text-lg mb-10 text-gray-200 font-medium max-w-2xl leading-relaxed">
           {subtitle}
         </p>
         <div className="flex flex-col sm:flex-row gap-4">

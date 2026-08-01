@@ -1,7 +1,7 @@
 
 {
   "companyName": "INSUMAQ",
-  "whatsappNumber": "5491112345678",
+  "whatsappNumber": "5491131576788",
   "whatsappMessage": "Hola! Me gustaría obtener más información sobre sus servicios de reparación y repuestos.",
   "navItems": [
     { "label": "Inicio", "href": "#inicio" },
@@ -11,16 +11,16 @@
     { "label": "Contacto", "href": "#contacto" }
   ],
   "hero": {
-    "title": "Soluciones Integrales en Maquinaria",
-    "subtitle": "Especialistas en mantenimiento correctivo, preventivo y venta de repuestos originales para que su potencia nunca se detenga.",
+    "title": "Repuestos y Reparaciones para Maquinaria Pesada",
+    "subtitle": "Venta de repuestos para tractores y equipos de campo, más reparaciones hidráulicas, eléctricas y de motores.",
     "ctaText": "Ver Servicios",
-    "backgroundImage": "/banner.jpg"
+    "backgroundImage": "banner.png"
   },
   "about": {
-    "title": "Liderazgo en el Sector de Maquinaria",
+    "title": "Liderazgo en Repuestos y Reparaciones",
     "subtitle": "Sobre INSUMAQ",
-    "description": "En INSUMAQ nos dedicamos a maximizar la vida útil de sus equipos pesados. Con una trayectoria consolidada, combinamos ingeniería de precisión con los mejores repuestos del mercado. Nuestro compromiso es la eficiencia operativa de su flota.",
-    "image": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=2070"
+    "description": "En INSUMAQ nos dedicamos a maximizar la vida útil de sus equipos pesados con foco en repuestos para maquinaria agrícola e industrial. Ofrecemos reparación integral de sistemas hidráulicos, eléctricos y motores, junto con repuestos de marcas líderes.",
+    "image": "tractor.jpg"
   },
   "services": [
     {
@@ -43,20 +43,52 @@
     }
   ],
   "spareParts": {
-    "title": "Repuestos Certificados",
-    "description": "Amplio stock de componentes críticos para marcas líderes. Aseguramos la compatibilidad y durabilidad que su maquinaria exige.",
+    "title": "Repuestos y Soporte para Maquinaria Pesada",
+    "description": "Mantenemos su flota operativa con repuestos para maquinaria de campo y equipos pesados. Repuestos para tractores, excavadoras, cargadoras, motores y sistemas hidráulicos de marcas líderes.",
+    "deliveryInfo": "Demora máxima de 15 días hábiles.",
     "categories": [
       "Bombas y Motores Hidráulicos",
       "Kits de Filtros Originales",
       "Tren de Rodaje y Transmisión",
       "Elementos de Desgaste (Cuchillas/Puntas)"
     ],
+    "brands": [
+      "Repuestos Caterpillar",
+      "Repuestos Komatsu",
+      "Repuestos John Deere",
+      "Repuestos Sandvik",
+      "Repuestos Epiroc",
+      "Repuestos Atlas Copco",
+      "Repuestos Volvo CE",
+      "Repuestos Hitachi",
+      "Repuestos Liebherr",
+      "Repuestos Cummins",
+      "Repuestos Scania",
+      "Repuestos Deutz"
+    ],
+    "brandLogos": [
+      { "name": "Caterpillar", "src": "/assets/logo/caterpillar.png" },
+      { "name": "Komatsu", "src": "/assets/logo/komatsu.png" },
+      { "name": "John Deere", "src": "/assets/logo/john-deere.png" },
+      { "name": "Sandvik", "src": "/assets/logo/sandvik.png" },
+      { "name": "Epiroc", "src": "/assets/logo/epiroc.png" },
+      { "name": "Atlas Copco", "src": "/assets/logo/atlas-copco.png" },
+      { "name": "Volvo CE", "src": "/assets/logo/volvo-ce.png" },
+      { "name": "Hitachi", "src": "/assets/logo/hitachi.png" },
+      { "name": "Liebherr", "src": "/assets/logo/liebherr.png" },
+      { "name": "Cummins", "src": "/assets/logo/cummins.png" },
+      { "name": "Scania", "src": "/assets/logo/scania.png" },
+      { "name": "Deutz", "src": "/assets/logo/deutz.png" }
+    ],
     "image": "https://images.unsplash.com/photo-1537462715879-360eeb61a0ad?auto=format&fit=crop&q=80&w=2070"
   },
   "contact": {
-    "email": "ventas@insumaq.com",
-    "phone": "+54 11 1234 5678",
-    "address": "Av. Industrial 4500, Sector Logístico, Argentina",
+    "email": "Rep.insumaq@gmail.com",
+    "phones": [
+      "11-7827-1220",
+      "11-3157-6788"
+    ],
+    "address": "Caamaño 1103, Edificio Agora 1, Oficina 604, Pilar",
     "hours": "Lunes a Viernes de 08:00 a 18:00 hs"
   }
 }
