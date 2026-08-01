@@ -1,0 +1,128 @@
+{
+  "company": {
+    "name": "TransExec VIP",
+    "shortName": "TransExec VIP",
+    "tagline": "Soluciones Integrales de Movilidad Corporativa e Institucional",
+    "heroDescription": "Especialistas en traslado masivo de personal para empresas, complejos industriales, delegaciones extranjeras y viajes privados grupales. Puntualidad, seguridad y confort de alta gama.",
+    "aboutText": "Ofrecemos un servicio de transporte privado de alta calidad diseñado para satisfacer las crecientes demandas operativas de empresas, industrias y organizaciones. Contamos con logística personalizada, monitoreo satelital en tiempo real y unidades ejecutivas preparadas para brindar la mejor experiencia en cada trayecto.",
+    "phone": "+54 9 11 2345-6789",
+    "formattedPhone": "+5491136910607",
+    "whatsappNumber": "5491136910607",
+    "whatsappDefaultMessage": "Hola, me contacto desde la web para solicitar información sobre servicios de traslado.",
+    "email": "contacto@gmail.com",
+    "recruitmentEmail": "busquedachoferes@gmail.com",
+    "address": "Parque Industrial Central / Buenos Aires, Argentina",
+    "operatingHours": "Atención Corporativa y Operativa 24/7",
+    "socialMedia": {
+      "instagram": "https://instagram.com/transporte_ejecutivo",
+      "facebook": "https://facebook.com/transporte_ejecutivo",
+      "tiktok": "https://tiktok.com/@transporte_ejecutivo"
+    }
+  },
+  "aboutFeatures": [
+    {
+      "title": "Logística Corporativa Medida",
+      "description": "Planificación y optimización de rutas para traslados recurrentes de personal industrial y visitas ejecutivas.",
+      "icon": "Building2"
+    },
+    {
+      "title": "Seguridad & Calidad Certificada",
+      "description": "Unidades sometidas a rigurosas inspecciones mecánicas, con choferes profesionales altamente calificados.",
+      "icon": "ShieldCheck"
+    },
+    {
+      "title": "Monitoreo GPS 24/7",
+      "description": "Seguimiento satelital en tiempo real de toda nuestra flota para garantizar máxima trazabilidad y puntualidad.",
+      "icon": "Clock"
+    }
+  ],
+  "fleet": {
+    "brand": "Mercedes-Benz",
+    "model": "Sprinter 516 Minibús",
+    "quantity": 3,
+    "capacity": "19 + 1 Pasajeros (hasta 60 pasajeros simultáneos)",
+    "description": "Contamos con una flota propia compuesta por 3 unidades Mercedes-Benz Sprinter 516 Minibús de última generación, configuradas específicamente para viajes ejecutivos de corta, mediana y larga distancia.",
+    "image": "/img/sprinter_fleet_main.jpg",
+    "features": [
+      "Asientos reclinables de cuero confort ejecutivo",
+      "Aire acondicionado de alta potencia tri-zona y calefacción",
+      "Conectividad USB en cada fila de asientos",
+      "Control de estabilidad (ESP Adaptativo) y frenos ABS",
+      "Tacógrafo digital y geolocalización satelital en tiempo real",
+      "Capacidad para 19 pasajeros sentados confortablemente + Chofer",
+      "Amplia bodega para equipajes y maletines de trabajo"
+    ]
+  },
+  "services": [
+    {
+      "id": "parques-industriales",
+      "title": "Traslados Industriales y Empresariales",
+      "subtitle": "Transporte recurrente de personal para empresas y parques industriales",
+      "category": "corporativo",
+      "description": "Servicio de transporte diario para empleados, supervisores y ejecutivos a plantas industriales, complejos fabriles y oficinas corporativas. Diseño de circuitos optimizados, cambios de turno puntualidad garantizada.",
+      "features": [
+        "Rutas fijas y adaptables según turnos rotativos",
+        "Control de asistencia e identificación de pasajeros",
+        "Facturación A/B para empresas y convenios mensuales",
+        "Respuesta ante contingencias y unidades de respaldo"
+      ],
+      "image": "/img/empresariales-1.jpg",
+      "badgeText": "Servicio Corporativo Continuo",
+      "whatsappMessage": "Hola, quisiera consultar y cotizar el servicio de Traslados para Empresas y Parques Industriales."
+    },
+    {
+      "id": "turismo-receptivo",
+      "title": "Turismo Receptivo y Visitas Corporativas",
+      "subtitle": "Atención distinguida para delegaciones e invitados internacionales",
+      "category": "receptivo",
+      "description": "Traslados de alta gama para ejecutivos, clientes y contingentes extranjeros que visitan el país. Coordinación en aeropuertos (Shuttle VIP), recorridos guiados por puntos turísticos, centros de convenciones y reuniones de negocios.",
+      "features": [
+        "Recepción personalizada en aeropuertos y hoteles",
+        "Choferes capacitados en trato protocolar",
+        "Confort de alta gama y espacio para equipaje corporativo",
+        "Recorridos gastronómicos y culturales a medida"
+      ],
+      "image": "/img/turismo-corporativo.jpg",
+      "badgeText": "Atención Ejecutiva VIP",
+      "whatsappMessage": "Hola, quisiera coordinar una cotización para el servicio de Turismo Receptivo / Visitas Corporativas para extranjeros."
+    },
+    {
+      "id": "viajes-recreativos",
+      "title": "Eventos, Grupos y Salidas Recreativas",
+      "subtitle": "Movilidad integrada para instituciones, clubes y eventos privados",
+      "category": "recreativo",
+      "description": "Soluciones de traslado para grupos numerosos hacia eventos sociales, jornadas de integración corporativa (Team Building), viajes deportivos para clubes de chicos, vacaciones grupales y festejos familiares.",
+      "features": [
+        "Capacidad flexible combinando hasta 3 unidades (60 pasajeros)",
+        "Espacio cómodo para grupos de chicos y adultos",
+        "Viajes de corta, mediana y larga distancia",
+        "Flexibilidad de horarios de ida y vuelta"
+      ],
+      "image": "/img/recreativas.jpg",
+      "badgeText": "Salidas y Eventos Especiales",
+      "whatsappMessage": "Hola, deseo solicitar un presupuesto para un Viaje Grupal / Recreativo / Evento especial."
+    }
+  ],
+  "driverRequirements": [
+    {
+      "title": "Licencia Profesional al Día",
+      "description": "Licencia de conducir categoría D2 / LNT vigente para transporte de pasajeros.",
+      "icon": "FileCheck"
+    },
+    {
+      "title": "Experiencia Comprobable",
+      "description": "Mínimo 3 años manejando utilitarios ejecutivos o minibuses de pasajeros.",
+      "icon": "Award"
+    },
+    {
+      "title": "Puntualidad y Trato Ejecutivo",
+      "description": "Compromiso con las normas de seguridad vial, excelente presencia y cordialidad.",
+      "icon": "UserCheck"
+    },
+    {
+      "title": "Documentación en Regla",
+      "description": "Antecedentes penales al día y disponibilidad para turnos corporativos rotativos.",
+      "icon": "ShieldAlert"
+    }
+  ]
+}

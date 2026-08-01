@@ -1,0 +1,6 @@
+{
+  "name": "VIP Transfer - Traslados Corporativos y Grupales",
+  "description": "Servicio profesional de traslados ejecutivos, empresas en parques industriales, turismo receptivo y viajes recreativos de alta capacidad.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
